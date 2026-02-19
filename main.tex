@@ -1,0 +1,35 @@
+\documentclass[12pt, a4paper]{report}
+
+% 1. Load Configuration
+\input{config/settings.tex}
+
+% 2. Load Preamble
+\input{structure/preamble.tex}
+
+% 2.5. Load Additional Configurations
+\input{config/colors.tex}
+\input{config/header_footer_default/footer.tex}
+\input{config/header_footer_default/header.tex}
+
+
+% 3. Metadata
+\title{\textbf{\DocTitle} \\ \large \DocSubtitle}
+\author{\DocAuthor}
+\date{\DocDate}
+
+\begin{document}
+
+% Replace standard title with custom one
+\input{content/_first_page/first_page.tex}
+\tableofcontents
+\newpage
+
+% 4. Import Content
+\clearpage
+\pagenumbering{arabic}
+
+\input{content/chap1_intro&existing_solutions/chap1.tex}
+\input{content/chap2_conception/chap2.tex}
+\input{content/chap3_implementation/chap3.tex}
+
+\end{document}
