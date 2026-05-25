@@ -1,84 +1,97 @@
 % =============================================
-%  PACKAGE LOADING & LOGIC
+%  PREAMBLE - Allo Artisan Project
+%  Compatible avec main.tex (XeLaTeX/LuaLaTeX)
 % =============================================
 
 % --- Layout & Geometry ---
-% Load geometry package with custom margins
 \usepackage[a4paper,
-            top=\TopMargin,
-            bottom=\BottomMargin,
-            left=\LeftMargin,
-            right=\RightMargin]{geometry}
+            top=2.5cm,
+            bottom=2.5cm,
+            left=2.5cm,
+            right=2.5cm]{geometry}
+
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\small \textbf{\DocTitle}}
+\fancyhead[L]{\small \textbf{Allo Artisan}}
 \fancyhead[R]{\small \leftmark}
 \fancyfoot[C]{\thepage}
-
+\renewcommand{\headrulewidth}{0.4pt}
+\setlength{\headheight}{14.5pt}
 
 % --- Spacing & Typography ---
 \usepackage{setspace}
-\onehalfspacing
-\setlength{\parindent}{\ParIndent}
-\setlength{\parskip}{\ParSkip}
+\setstretch{1.2}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
 \usepackage{microtype}
 
 % --- Colors & Graphics ---
 \usepackage{xcolor}
-\definecolor{PrimaryColor}{HTML}{\ThemeColor}
-\usepackage{wrapfig}
+\definecolor{algeriablue}{RGB}{0, 114, 198}
+\definecolor{lightblue}{RGB}{225, 238, 252}
+\definecolor{headercolor}{RGB}{230,240,250}
+\definecolor{rowcolorlight}{RGB}{248,250,252}
+\definecolor{strengthblue}{RGB}{0,102,153}
+\definecolor{weakred}{RGB}{180,40,40}
+
 \usepackage{graphicx}
 \graphicspath{{figures/}}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{subcaption}
 
 % --- Links ---
-\usepackage[hidelinks]{hyperref}
-\hypersetup{
+\usepackage[
     colorlinks=true,
-    linkcolor=PrimaryColor,
-    urlcolor=PrimaryColor,
-    citecolor=PrimaryColor,
-    pdftitle={\DocTitle},
-    % Clean up author list for PDF metadata (remove \\)
-    pdfauthor={Multiple Authors}
-}
+    citecolor=blue,
+    linkcolor=blue,
+    urlcolor=blue,
+    pdftitle={Development of a Mobile Application for Client-Artisan Connection},
+    pdfauthor={Taftist, Chennouf, Akhdari, Oubaziz}
+]{hyperref}
+\usepackage{url}
 
 % --- Tables & Lists ---
 \usepackage{array}
 \usepackage{booktabs}
+\usepackage[table]{xcolor}
+\usepackage{colortbl}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{adjustbox}
+\usepackage{lscape}
 \usepackage{enumitem}
-\setlist{nosep} % Compact lists
+\setlist{nosep}
 
-% --- Tools (MUST LOAD BEFORE BIDI/POLYGLOSSIA) ---
-\usepackage{listings}
-\usepackage{tcolorbox}
+% --- Custom symbols ---
+\newcommand{\good}{\textcolor{strengthblue}{\small $\blacktriangleright$}}
+\newcommand{\bad}{\textcolor{weakred}{\Large $\bullet$}}
 
-% --- Language & Fonts (The Heavy Lifting) ---
+% --- Captions & TikZ ---
+\usepackage{caption}
+\usepackage{tikz}
+
+% --- Language & Fonts (XeLaTeX/LuaLaTeX) ---
 \usepackage{fontspec}
+\usepackage{unicode-math}
 
-\ifRTLmode
-    % RTL Setup (Arabic/Hebrew)
-    % LuaLaTeX handles RTL via Babel or Polyglossia beautifully
-    \usepackage{polyglossia}
-    \setmainlanguage{\MainLanguage}
-    \setotherlanguage{\SecondLanguage}
-    \newfontfamily\arabicfont[Script=Arabic]{\ArabicFont}
-    \setmainfont{\MainFont}
-\else
-    % LTR Setup (English/French)
-    \usepackage{polyglossia}
-    \setmainlanguage{\MainLanguage}
-    \setotherlanguage{\SecondLanguage}
-    \setmainfont{\MainFont}
-    \setmonofont{\MonoFont}
-    % Define Arabic font just in case we mix languages
-    \newfontfamily\arabicfont[Script=Arabic]{\ArabicFont}
-\fi
+\setmainfont{Latin Modern Roman}
+\setmathfont{Latin Modern Math}
 
-\usepackage{ulem}     % for underlining
-\usepackage{caption}  % for customizing captions
-\usepackage{xparse} % For flexible argument handling
-\usepackage{expl3}
-\usepackage{comment} % For block comments
-% --- Custom Command Definitions ---
-\input{structure/macros.tex}
+% Symbol font for custom itemize
+\newfontfamily{\symbolfont}{DejaVu Sans}
+\setlist[itemize]{label={\symbolfont✦}, itemsep=6pt, topsep=6pt}
+
+\usepackage{polyglossia}
+\setmainlanguage{english}
+\setotherlanguage{arabic}
+\newfontfamily\arabicfont[Script=Arabic]{Amiri}   % change si tu as une autre police arabe
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+
+% --- Other useful packages ---
+\usepackage{ulem}
+\usepackage{ragged2e}
+\usepackage{comment}
+\usepackage{cite}

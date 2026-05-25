@@ -1,77 +1,1355 @@
-% Define page margins
-\newgeometry{left=3cm,right=3cm,top=1.5cm,bottom=1.5cm}
+\documentclass[12pt,a4paper]{report}
+
+\usepackage{geometry}            % Controls page margins
+\geometry{margin=2.5cm}          % Sets all margins to 2.5 cm
+% Colors
+\usepackage{xcolor}
+% For custom lists
+\usepackage{enumitem}
+\usepackage{wrapfig}
+
+\usepackage{fontspec}
+\newfontfamily{\symbolfont}{Arial}
+
+%\setlist[itemize]{label={\symbolfont✦}, itemsep=3pt, topsep=3pt}
+
+\usepackage{comment}    % to i can write a paragraphe of comments 
+%\usepackage{enumitem}   % to items like →
+
+
+% Apply ✦ globally to all itemize lists
+\setlist[itemize]{label={\symbolfont}, itemsep=6pt, topsep=6pt}
+% Font management (required for XeLaTeX)
+%\usepackage{fontspec}
+% Symbol font
+%\newfontfamily{\symbolfont}{DejaVu Sans}   % for the star ✦
+
+
+\usepackage{setspace}            % Controls line spacing
+\setstretch{1.2}                 % Sets line spacing to 1.2
+
+\usepackage{graphicx}            % Allows inserting images
+\usepackage{float}               % Enables precise float placement using [H]
+
+\usepackage{booktabs}            % Professional-quality tables (toprule, midrule, bottomrule)
+\usepackage{array}               % Extended column formatting options
+\usepackage[table]{xcolor}       % Enables colors inside tables
+\usepackage{colortbl}            % Additional color support for tables
+
+% --- Custom subtle academic colors ---
+\definecolor{headercolor}{RGB}{230,240,250}   % Light blue for table header
+\definecolor{rowcolorlight}{RGB}{248,250,252} % Very light gray for alternating rows
+
+\usepackage{fontspec}            % Allows system font selection (XeLaTeX/LuaLaTeX only)
+\usepackage{unicode-math}        % Enables modern math font handling
+
+\setmainfont{TeX Gyre Termes}    % Sets main document font (similar to Times)
+\setmathfont{TeX Gyre Termes Math} % Sets math font
+
+\usepackage{polyglossia}         % Modern multilingual support for XeLaTeX
+
+\setmainlanguage{english}        % Main document language
+\setotherlanguage{arabic}        % Secondary language (Arabic support)
+\hyphenpenalty=10000             % Prevents word hyphenation
+\exhyphenpenalty=10000           % Prevents explicit hyphen breaks
+
+
+% ===== Elegant marked lists =====
+\usepackage{enumitem}
+\usepackage{xcolor}
+% Colors
+\definecolor{strengthblue}{RGB}{0,102,153}
+\definecolor{weakred}{RGB}{180,40,40}
+
+
+% Small elegant symbols
+\newcommand{\good}{\textcolor{strengthblue}{\small $\blacktriangleright$}}
+\newcommand{\bad}{\textcolor{weakred}{\Large $\bullet$}}
+ \usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{colortbl}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\leftmark}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\setlength{\headheight}{14.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\usepackage{lscape}   
+\usepackage{wrapfig} 
+\usepackage{longtable}   
+\usepackage{adjustbox}
+\usepackage{subcaption} 
+\usepackage{graphicx} 
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{url}
+\usepackage{cite}
+\usepackage[
+    colorlinks=true,
+    citecolor=blue,
+    linkcolor=blue,
+    urlcolor=blue
+]{hyperref}
+% =====================================================
+%                DOCUMENT START
+% =====================================================
+% Define clearer Algeria blue
+\definecolor{algeriablue}{RGB}{0, 114, 198}
+\definecolor{lightblue}{RGB}{225, 238, 252}
+
+% Page margins
+\geometry{top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+
+% Remove page number on cover
+\pagenumbering{gobble}
+
+
+
+
+% Ensure text doesn't go out of frame
+\usepackage{ragged2e}
+
+\begin{document}
 
 \begin{titlepage}
-\thispagestyle{empty}
+\begin{tikzpicture}[remember picture, overlay]
+    % Cadre extérieur bleu
+    \draw[blue!60, line width=3pt] 
+        ([xshift=0.5cm, yshift=-0.5cm]current page.north west) 
+        rectangle 
+        ([xshift=-0.5cm, yshift=0.5cm]current page.south east);
+    % Cadre intérieur bleu
+    \draw[blue!40, line width=1pt] 
+        ([xshift=0.7cm, yshift=-0.7cm]current page.north west) 
+        rectangle 
+        ([xshift=-0.7cm, yshift=0.7cm]current page.south east);
+\end{tikzpicture}
 
-\begin{tiny}
-  \begin{center}
-  \textbf{People's Democratic Republic of Algeria}\\
-  \textbf{Ministry of Higher Education and Scientific Research}\\
-  \textbf{M'hamed Bougara University - Boumerdès}
-\end{center}
-\end{tiny}
-
-
+% ===== EN-TETE =====
 \begin{center}
-  \includegraphics[width=0.2\textwidth]{figures/_first_page/Uni_logo.png}
+\begin{minipage}[c]{0.15\textwidth}
+    \centering
+    \includegraphics[width=2cm]{logo1.jpg}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.65\textwidth}
+    \centering
+    \textbf{people's Democratic Republic of Algeria} \\[4pt]
+    \textbf{Ministry of Higher Education and Scientific Research} \\[4pt]
+    \textbf{M'Hamed Bougara University - Boumerdes}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.15\textwidth}
+    \centering
+    \includegraphics[width=2cm]{logo1.jpg}
+\end{minipage}
 \end{center}
 
+\vspace{0.5cm}
 \begin{center}
-  \textbf{Faculty of Sciences}\\
-  \textbf{Department of Computer Science}
+    {\large \textcolor{blue}{\underline{\textbf{Faculty of Sciences}}}} \\[8pt]
+    {\normalsize \underline{Department of Computer Science}}
 \end{center}
 
-\vspace{.5cm}
+\vspace{0.8cm}
 
-\begin{small}
-  \begin{tabbing}
-  \hspace{5cm} \= \hspace{7cm} \kill
-  \textbf{Field} : Mathematics and Computer Science \>  \\
-
-  \textbf{Program} : Computer Science \>  \\
-
-  \textbf{Specialization} : Computer Systems
-  \>  \\
-  \textbf{Accreditation Number of the Specialization} : Accreditation No. 872 dated 26/07/2016 \> \\
-\end{tabbing}
-\end{small}
-
-\vspace{0.3cm}
-
-\begin{center}
-  \textbf{\underline{Final Year Project for the Award of}}\\
-  \textbf{\underline{Bachelor's Degree}}
-\end{center}
-
-\vspace{.5cm}
-
-\begin{center}
-    \rule{\linewidth}{0.3mm} \\[0.4cm]
-{ \large \bfseries PFE TITLE\\[0.4cm] }
-\rule{\linewidth}{0.3mm} \\[1cm]
-\end{center}
-
-\vspace{.1cm}
-
+% ===== DOMAINE FILIERE SPECIALITE =====
 \begin{flushleft}
-  \textbf{Presented by:}\\
-Ms. Ikram Taftist\\
-Ms. Meriem Ch\\
-Ms. Nour El Houda Akhdari\\
-Ms. Soufia Oubaziz\\
-
-
+    \textbf{\underline{Domain:}} Mathematics and Computer Science \\[6pt]
+    \textbf{\underline{Field:}} Computer Science \\[6pt]
+    \textbf{\underline{Specialty:}} Information Systems
 \end{flushleft}
 
-\vspace{.5cm}
+\vspace{1cm}
 
+% ===== TITRE =====
 \begin{center}
-  \textbf{Defended on .../.../2026 before the jury composed of:}\\
-  \vspace{1cm}
-  \textbf{Mr. ...:} Supervisor\\
-  \textbf{Mr. ....:} Examiner\\
-  \textbf{Mr. ....:} Chairperson \\
+\begin{tikzpicture}
+    \draw[blue!60, line width=2pt, rounded corners=10pt] 
+        (0,0) rectangle (\textwidth, 3cm);
+    \node at (0.5\textwidth, 1.5cm) {
+        \begin{minipage}{0.9\textwidth}
+            \centering
+            {\Large \textbf{\textcolor{blue}{Development of a Mobile Application for}}} \\[10pt]
+            {\Large \textbf{\textcolor{blue}{Client--Artisan Connection}}}
+        \end{minipage}
+    };
+\end{tikzpicture}
+\end{center}
+
+\vspace{1.5cm}
+
+% ===== PRESENTED BY ET SUPERVISOR =====
+\begin{minipage}[t]{0.45\textwidth}
+\begin{tikzpicture}
+    \draw[blue!40, line width=1pt, rounded corners=5pt] 
+        (0,0) rectangle (7cm, 4.5cm);
+    \node[anchor=north west] at (0.2cm, 4.3cm) {
+        \begin{minipage}{6.5cm}
+            \textbf{\underline{Presented by:}} \\[8pt]
+            \hspace{0.5cm} Ms. Ikram Taftist \\[6pt]
+            \hspace{0.5cm} Ms. Meriem Chennouf \\[6pt]
+            \hspace{0.5cm} Ms. Nour El Houda Akhdari \\[6pt]
+            \hspace{0.5cm} Ms. Sofia Oubaziz
+        \end{minipage}
+    };
+\end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+\begin{tikzpicture}
+    \draw[blue!40, line width=1pt, rounded corners=5pt] 
+        (0,0) rectangle (7cm, 4.5cm);
+    \node[anchor=north west] at (0.2cm, 4.3cm) {
+        \begin{minipage}{6.5cm}
+            \textbf{\underline{Supervisor:}} \\[8pt]
+            \hspace{0.5cm} Ms. Samiya Hamadouche \\[12pt]
+            \textbf{\underline{Examiner:}} \\[8pt]
+            \hspace{0.5cm} Mr. Nouasri Amine
+        \end{minipage}
+    };
+\end{tikzpicture}
+\end{minipage}
+
+\vspace{1.2cm}
+
+% ===== DEFENDED ON =====
+\begin{center}
+    \textbf{\underline{Defended on}} : 26/05/2026
+\end{center}
+
+\vspace{0.8cm}
+
+% ===== LIGNE ET ANNEE =====
+\begin{center}
+    \rule{6cm}{0.4pt} \\[8pt]
+    2025 - 2026
 \end{center}
 
 \end{titlepage}
+\pagenumbering{roman}
+\chapter*{Dedication meriem }
+\chapter*{Dedication ikram}
+\chapter*{Dedication SOFIA }
+\chapter*{Dedication nour}
+\chapter*{Dedication prof}
+\chapter*{Summary}
+\section{Summary}
+This project involves the design and development of a mobile application called Allo Artisan, aimed at connecting clients with artisans in Algeria. Following an analysis of existing solutions and their limitations, we proposed a solution built around three main axes: trust, functionality, and accessibility. The application provides key features such as QR code identity verification, diploma validation, a multi-criteria search system, an availability calendar, a post and notification mechanism for service requests. Technically, the application was developed using Flutter for the mobile interface, Go (Golang) for the backend, and PostgreSQL as the database management system, deployed via Docker.
+Keywords : Mobile application, client-artisan connection, Flutter, Go, PostgreSQL
+
+ \section{ملخص} 
+ Allo Artisan يتمحور هذا المشروع حول تصميم وتطوير تطبيق هاتف يحمل اسم يهدف إلى تسهيل التواصل بين الزبائن والحرفيين في الجزائر. بعد تحليل التطبيقات الموجودة في نفس المجال ونقاط ضعفها، اقترحنا حلاً مبنياً على ثلاثة محاور رئيسية هي: الثقة، الوظائف، .
+يوفر التطبيق مجموعة من الميزات الأساسية أبرزها: التحقق من هوية الحرفي عن طريق رمز الاستجابة السريعة، والتحقق من الشهادات والوثائق المهنية، ونظام بحث متعدد المعايير، وتقويم لعرض أوقات التوفر، إضافةً إلى نظام منشورات وإشعارات خاصة بطلبات الخدمة العاجلة والعادية.أما على الصعيد التقني، فقد تم تطوير التطبيق باستخدام Flutter لتصميم الواجهات، وGo (Golang) لتطوير الخادم وبناء واجهة برمجية من نوع REST، وPostgreSQL كنظام لإدارة قواعد البيانات، مع اعتماد Docker لضمان نشر مستقر ومحمول.
+الكلمات المفتاحية : تطبيق جوال، ربط الزبائن بالحرفيين، بحث متعدد المعايير، Flutter، Go، PostgreSQL.
+
+% ======================
+% Table of Contents
+% ======================
+\tableofcontents
+\newpage
+\addcontentsline{toc}{chapter}{List of Table}
+\listoftables
+\newpage
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures 
+\chapter*{General Introduction}
+\thispagestyle{empty}
+\setcounter{page}{0} 
+\addcontentsline{toc}{chapter}{General introduction}
+In today's rapidly evolving digital landscape, mobile applications have become essential tools 
+for simplifying everyday tasks and improving access to services. Among the most pressing 
+challenges faced by Algerian households is the difficulty of finding reliable, qualified, and 
+available artisans for urgent needs such as plumbing repairs, electrical installations, or 
+mechanical interventions. Despite the existence of numerous skilled professionals in the 
+market, the lack of an efficient and trustworthy platform to connect them with potential clients 
+creates a significant gap in the local service ecosystem.
+
+A review of existing solutions such as Khedamni, De9de9, and Afriha reveals recurring 
+limitations: absence of identity verification, lack of availability management, restricted search 
+options, and insufficient trust mechanisms. These shortcomings motivated us to propose a 
+more robust and user-centered alternative — \textbf{Allo Artisan} — a mobile application designed to 
+bridge the gap between clients and artisans through a secure, transparent, and intuitive 
+platform built around three core principles: \textbf{trust, functionality, and accessibility}.
+
+This document is structured into three chapters. \textbf{Chapter 1} presents a comparative analysis of 
+existing applications, defines the problem statement, and describes our proposed solution 
+strategy. \textbf{Chapter 2} covers the complete UML modeling of the system, including use case, 
+sequence, class, and activity diagrams. \textbf{Chapter 3} details the implementation phase, 
+presenting the tools and technologies used alongside the main interfaces of the application.
+% ======================
+% Chapters
+% ======================
+\newpage
+\pagestyle{fancy}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\chapter{Existing system analysis}
+
+\section{Introduction}
+
+This chapter is dedicated to the study and analysis of \textbf{existing solutions} in the same domain as our project. Reviewing existing applications represents a \textbf{fundamental step} in the development of any new system, as it provides a clear understanding of current market solutions and their functionalities. Through this analysis, we aim to examine how these applications operate, evaluate the \textbf{services they provide to users}, and identify their \textbf{strengths} as well as their \textbf{limitations}. 
+
+This study will enable us to determine the aspects that require improvement and to define the \textbf{requirements} necessary for designing a more \textbf{effective}, \textbf{reliable}, and \textbf{competitive application}.
+
+
+\section{Review of Existing Solutions and Applications}
+
+To better understand the current state of existing solutions, we will analyze a selection of popular applications in this domain, namely \textit{\textbf{Khedamni}}, \textit{\textbf{De9de9}}, and \textit{\textbf{Afriha}}. Each application will be examined based on its \textbf{main features},\textbf{ strengths}, and\textbf{ weaknesses} in order\textbf{ to highlight their limitations} and \textbf{identify opportunities for improvement}.
+% =======================
+% Khedamni
+% =======================
+\subsubsection{\underline{Khedamni}}
+\textit{\textbf{Khedamni}} is a mobile application available on the Google Play Store, with over 10,000 downloads and a rating of 4.4 stars based on 207 reviews.
+
+\begin{center}
+    \includegraphics[width=2.5cm]{khedmni .png} 
+    \par
+    \textbf{Khedamni Logo}
+\end{center}
+
+\textbf{Weaknesses:}
+\begin{itemize}[label=\bad, leftmargin=1.2cm, itemsep=2pt]
+\item Search limited to filtering by wilaya and commune only
+\item Many professionals have limited feedback, making it hard to assess service quality
+\item No diploma required during account creation, profiles lack professionalism
+\item No calendar feature, so users cannot check artisan availability
+\item Profiles display very little information overall
+\end{itemize}
+
+\textbf{Strengths:}
+\begin{itemize}[label=\good, leftmargin=1.2cm, itemsep=2pt]
+\item Clean and professional interface
+\item Home page displays client posts filtered by wilaya, commune, and category
+\item Account creation is simple and straightforward
+\item Good use of post status indicators (e.g., ``en attente'', replies)
+\end{itemize}
+
+
+
+% =======================
+% De9de9
+% =======================
+\subsubsection{\underline{De9de9}}
+\textit{\textbf{De9de9 }}is a mobile and web application available on the Google Play Store, with over 50,000 downloads and a rating of 4.1 stars based on 120 reviews.
+
+\begin{center}
+    \includegraphics[width=2.5cm]{d9d9.png} 
+    \par
+    \textbf{De9de9 Logo}
+\end{center}
+
+\textbf{Weaknesses:}
+\begin{itemize}[label=\bad, leftmargin=1.2cm, itemsep=2pt]
+\item No consistent standards in account creation; mix of professional and irrelevant profiles, which is unfair to skilled users
+\item No verification framework to validate identities or qualifications; no diploma required
+\item Guest access is very restricted, preventing visitors from building enough trust to register
+\end{itemize}
+
+\textbf{Strengths:}
+\begin{itemize}[label=\good, leftmargin=1.2cm, itemsep=2pt]
+\item Richly detailed artisan profiles: questionnaire, work gallery, itemized pricing, availability calendar, and ratings
+\item Wide diversity of service categories with many subcategories
+\end{itemize}
+
+
+
+% =======================
+% Afriha
+% =======================
+\subsubsection{\underline{Afriha}}
+\textit{\textbf{Afriha}} is a mobile and web application available on the Google Play Store, with over 10,000 downloads and a rating of 4.0 stars based on 24 reviews.
+
+\begin{center}
+    \includegraphics[width=2.5cm]{afriha.png} 
+    \par
+    \textbf{Afriha Logo}
+\end{center}
+
+\textbf{Weaknesses:}
+\begin{itemize}[label=\bad, leftmargin=1.2cm, itemsep=2pt]
+\item Mandatory GPS activation undermines trust and discourages new users
+\item Home page displays artisan accounts in a random and unclear order
+\item No diploma required, profile names appear unprofessional
+\item Search filtering limited to category only, which can raise safety concerns
+\item No calendar, profiles lack pricing and scheduling details
+\item Post functionality is very limited
+\end{itemize}
+
+\textbf{Strengths:}
+\begin{itemize}[label=\good, leftmargin=1.2cm, itemsep=2pt]
+\item Search uses selection-based navigation instead of free-text input
+\item Wide variety of service categories with many associated services
+\end{itemize}
+
+\section{Problem Statement}
+After conducting research by reading user reviews of existing applications, we collected 
+their needs. Based on this, we identify the problem that should be addressed through our proposed application : \newline
+The identified shortcomings of current applications reveal a fundamental gap in addressing the needs of both end users and skilled artisans, highlighting the need for a more robust, scalable, and user-centered solution adapted to modern service ecosystems
+
+\section{Proposed an Adopted Solution}
+This section presents the main design directions of the proposed application, which are based on the analysis of existing systems and identified user needs. The proposed solution is structured around three main axes: \textbf{trust}, \textbf{functionality}, and \textbf{usability \& accessibility}, which together define the core principles of our application.
+
+\subsubsection{\large1. \underline{Trust}}
+\begin{itemize}
+    \item[$\bullet$] Each artisan is assigned a \textbf{QR code} linked to their profile, allowing clients to verify their identity before receiving any service.
+    
+    \item[$\bullet$] Artisan registration requires a \textbf{formal verification process}, including personal information and supporting documents such as diplomas or professional licenses. Accounts are reviewed before activation.
+    
+    \item [$\bullet$] A \textbf{reliable review system} is implemented, where ratings can only be submitted after service confirmation from both the client and the artisan, ensuring authenticity.
+    
+    \item[$\bullet$] A \textbf{progressive rating system} is used to reflect the artisan’s most recent performance more accurately.
+    
+    \item[$\bullet$] The system includes a \textbf{Visitor Mode}, allowing users to browse the application without registration, improving accessibility and transparency.
+    
+    \item[$\bullet$] The application does not rely on GPS tracking; instead, users manually select their location (wilaya and commune), with an optional \textbf{distance-based search (km zone)} to find nearby artisans.
+\end{itemize}
+
+\subsubsection{\large2. \underline{Features}}
+\begin{itemize}
+    \item[$\bullet$] An \textbf{advanced search system} allows users to filter artisans by category and location (wilaya and commune), with an additional \textbf{distance-based filter (km zone)}.
+    
+    \item[$\bullet$] Artisans can switch between \textbf{Active and Inactive modes}, controlling their visibility and availability.
+    
+    \item[$\bullet$] A \textbf{post system} enables clients to publish requests (urgent or non-urgent), which are sent as notifications to active artisans in the same category and area. Artisans can also share their work and interact through comments and reactions.
+    
+    \item[$\bullet$] Each artisan profile includes a \textbf{calendar showing availability and booked days}, without exposing detailed appointment information to preserve privacy.
+\end{itemize}
+
+\subsubsection{\large3. \underline{Usability \& Accessibility}}
+\begin{itemize}
+    \item[$\bullet$] The platform supports \textbf{three languages (Arabic, French, English)} to serve a wide range of users.
+    \item[$\bullet$] Users can \textbf{follow and save artisans} for quick and easy access later.
+    \item[$\bullet$] Only \textbf{active artisans} are displayed in search results to improve efficiency.
+    \item[$\bullet$] The interface is designed to be \textbf{simple, clear, and intuitive}, suitable for users of all technical levels.
+\end{itemize}
+%\begin{center}
+ %   \includegraphics[width=0.6\textwidth]{pillars_final.png}
+%\end{center}
+%\begin{figure}[H]
+    %\centering
+    %\includegraphics[width=0.8\textwidth]{photo_2026-05-18_22-23-55.jpg}
+    %\caption{What is our application based on?} 
+     % \label{fig:What is our application based on?}
+%\end{figure} 
+\section{Conclusion}
+
+In this chapter, we conducted a \textbf{comprehensive study} of existing applications by analyzing their \textbf{strengths and weaknesses} from the users’ perspective. This evaluation enabled us to identify \textbf{relevant improvements} and \textbf{innovative solutions} that will be integrated into our application in order to enhance its \textbf{performance}, \textbf{usability}, and \textbf{competitiveness} in the market. 
+
+In the next chapter, we will proceed to the implementation of the proposed solutions through the \textbf{System Modeling} phase using \textbf{UML diagrams}.
+
+\chapter{Application Modeling}
+\section{\textbf{Introduction}}
+\begin{itemize}
+    \item In this chapter, we will study several UML (Unified Modeling Language) models of a system. Some models present the system from the users’ point of view, others illustrate its internal structure, while some provide a global or detailed vision of the system. These models complement each other and can be combined. They are developed throughout the entire system development life cycle, from requirements expression to the design phase,
+\textbf{The application brings together five main actors}: the Visitor, the Client, the Artisan, the Moderator, and the Administrator 
+\end{itemize}  
+\section{Requirements expression}
+ \subsection{Use Case Diagram}
+
+Use case diagram are usually referred to as behavior diagram used to describe a set of 
+actions (use cases) that some system should or can perform in collaboration with one or 
+more external users of the system (actors). Each use case should provide some observable 
+and valuable result to the actors or other stakeholders of the system\cite{ref1}.
+
+\subsection{Identification of the actors}
+
+There are five actors who can use our application:
+
+\begin{enumerate}
+    \item \textbf{Visitor:} an unauthenticated person who can access limited public features of the application.
+    \item \textbf{Client:} a registered user who can access the full feature of the application.
+    \item \textbf{Artisan:} a registered professional who offers services on the platform.
+    \item \textbf{Moderator:} a system manager responsible for controlling and supervising the application.
+    \item \textbf{Administrator:} a system manager responsible for adding or rejecting a moderator and to help the moderator in its tasks.
+\end{enumerate}
+
+Each actor interacts with the system according to their role and permissions, which will be 
+reflected in the use case diagram.
+
+\subsection{Identification of the use case}
+In this table \ref{tab:usecase}, each actor has been defined with their own use cases:
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{|>{\bfseries\centering\arraybackslash}m{3cm}|>{\arraybackslash}m{10cm}|}
+\hline
+\cellcolor[HTML]{1F4E79}\textcolor{white}{\textbf{Actor}} & \cellcolor[HTML]{1F4E79}\textcolor{white}{\textbf{Use Case}} \\
+\hline
+\textbf{Visitor} & View a post \\
+\hline
+\multirow{8}{*}{\textbf{Client}} & Create an account \\
+ & Interact with an artisan's post \\
+ & Search an artisan \\
+ & View artisan's profile \\
+ & Manage an appointment \\
+ & Check the artisan profile by QR code \\
+ & Rate an artisan after service \\
+ & Exchange message with artisan \\
+\hline
+\multirow{7}{*}{\textbf{Artisan}} & Register an account \\
+ & Process request \\
+ & View the notification \\
+ & Set the availability in a calendar \\
+ & Set status \\
+ & Publish a new post \\
+ & Exchange message with client \\
+\hline
+\multirow{3}{*}{\textbf{Moderator}} & Approve post \\
+ & Manage reports \\
+ & Manage accounts \\
+\hline
+\textbf{Administrator} & Manage moderator \\
+\hline
+\end{tabular}
+\caption{Use cases by actor}
+\label{tab:usecase}
+\end{table}
+\subsection{presentation of Use case diagram}
+The following figure \ref{fig:use-case-diagram} illustrates the use case diagram of the application:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.98\textwidth]{use case 7.drawio.png}
+    \caption{Use Case Diagram}
+    \label{fig:use-case-diagram}
+\end{figure}
+\section{Analyse}
+This point describes in detail the behavior and interactions between the different components, and for this purpose, we use:
+\subsection{Definition of the Sequence Diagram}
+ A sequence diagram represent interactions between lifelines ,and illustrates interactions from a temporal perspective, particularly the chronological sequence of messages exchanged between lifelines\cite{ref3}
+\subsection{Example of the Sequence Diagram and their Textual Descriptions}
+In this part, we will present the sequence diagrams along with their textual descriptions for certain use cases of our system.
+\subsubsection{Use Case :'Register an Account Artisan' }
+The following figure(figure:\ref{fig:register account _ artisan})represents the sequence diagram of the <<Register an Artisan account>> use case: 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.98\textwidth]{sequance-client_request_service.drawio.png}
+    \caption{sequence diagram of the <<register an artisan account>> use case}
+    \label{fig:register account _ artisan}
+\end{figure}
+The following table (Table:\ref{tab:create-artisan}) represents the textual description corresponding to the previous sequence diagram(figure:\ref{fig:register account _ artisan}):
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1}
+\begin{tabular}{|>{\bfseries\arraybackslash}m{4cm}|>{\arraybackslash}m{10cm}|}
+\hline
+\multicolumn{2}{|c|}{\cellcolor[HTML]{1F4E79}\textcolor{white}{\textbf{Register Artisan Account}}} \\
+\hline
+Title & Register Artisan Account \\
+\hline
+Actor & Artisan \\
+\hline
+Objective & Register a new artisan account in the system. \\
+\hline
+Precondition & The artisan must have a valid email address. \\
+\hline
+Nominal Scenario &
+\begin{minipage}[t]{10cm}
+\vspace{2pt}
+    1.The Artisan submits registration details.\\
+    2. The Application queries the Database to verify if the email already exists.\\
+    1.1. The Database returns that the email is available.\\
+    3. The Application saves the artisan data with "Pending" status.\\
+    1.1. The Database confirms successful record creation.\\
+    1.2. The Application notifies the Artisan that the registration has been submitted and is awaiting confirmation.
+\vspace{2pt}
+\end{minipage} \\
+\hline
+Alternative Scenario & \textbf{A1: If the email already exists.} \newline
+1.1. The Application notifies the Artisan that the email is already registered. \\
+\hline
+\end{tabular}
+\caption{Textual Description of the Use Case <<Register an Artisan Account>>}
+\label{tab:create-artisan}
+\end{table}
+
+\subsubsection{Use Case :'authentication'}
+The following figure (figure:\ref{fig:authentication sequence diagram}) represents the sequence diagram of the “Authentication” use case 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.98\textwidth]{sequance-auth.drawio (1).png}
+    \caption{sequence diagram of `Authentication` use case}
+    \label{fig:authentication sequence diagram}
+\end{figure}
+The following table (Table:\ref{tab:authentication}) represents the textual description corresponding to the previous sequence diagram(figure:\ref{fig:authentication sequence diagram}):
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{|>{\bfseries\arraybackslash}m{3cm}|>{\arraybackslash}m{12cm}|}
+\hline
+\multicolumn{2}{|c|}{\cellcolor[HTML]{1F4E79}\textcolor{white}{\textbf{User Authentication}}} \\
+\hline
+Title & User Authentication \\
+\hline
+Actor & User (Artisan or Admin) \\
+\hline
+Objective & Log into the system using credentials. \\
+\hline
+Precondition & The user has a previously created and validated account. \\
+\hline
+Nominal Scenario &
+\begin{minipage}[t]{12cm}
+\vspace{1pt}
+1. The User fills in the login form.\\
+   2.The Application sends the credentials to the Database for verification.\\
+    2.1.The Database returns a successful result.\\
+    1.2.The Application redirects the User to the main application.
+\vspace{1pt}
+\end{minipage} \\
+\hline
+Alternative Scenario & \textbf{A1: Invalid credentials.} \newline
+1.1. The Application displays an error message. \\
+\hline
+\end{tabular}
+\caption{Textual Description of the Use Case <<Authentication>>}
+\label{tab:authentication}
+\end{table}
+
+\subsubsection{Use Case :'Schedule an appointment'}
+The following figure (Figure\ref{fig:request service}) represents the sequence diagram of the<<Schedule an appointment>>use case  
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.98\textwidth]{sequance-create_account_artisan.drawio (1).png}
+    \caption{Schedule an appointment sequence diagram}
+    \label{fig:request service}
+\end{figure}
+ The following table (Table\ref{tab:Schedule an appointment}) represents the textual description corresponding to the previous sequence 
+diagram(Figure\ref{fig:request service}):
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1}
+\begin{tabular}{|>{\bfseries\arraybackslash}m{3cm}|>{\arraybackslash}m{11cm}|}
+\hline
+\multicolumn{2}{|c|}{\cellcolor[HTML]{1F4E79}\textcolor{white}{\textbf{Schedule an appointment}}} \\
+\hline
+Title & Schedule an appointment \\
+\hline
+Actor & Client \\
+\hline
+Objective & Allow a client to request a service and book an available artisan. \\
+\hline
+Precondition &
+\begin{minipage}[t]{10cm}
+\vspace{4pt}
+$\bullet$ The Client is authenticated. \\
+$\bullet$ There are available artisans in the system.
+\vspace{4pt}
+\end{minipage} \\
+\hline
+Nominal Scenario &
+\begin{minipage}[t]{10cm}
+\vspace{4pt}
+1.1. The Client sends a service request. \\
+1.2. The Client selects preferred date and time. \\
+2.1. The Client App saves the service request details in the Database. \\
+2.2. The Database returns a list of available providers. \\
+2.4. The Client App notifies the Client that an artisan is available. \\
+1.3. The Client reviews the interested Artisan's profile and confirms the booking.
+\vspace{4pt}
+\end{minipage} \\
+\hline
+Alternative Scenario &
+\begin{minipage}[t]{10cm}
+\vspace{4pt}
+\textbf{A1 (High Urgency):} \\
+2.3. The Client App notifies all available providers about the urgent request. \\
+3.1. The system sends push notification to available Artisans. \\
+3.2. The Artisan views the request details. \\
+3.3. The Artisan shows interest (optional). \\
+1.3. The Client reviews the interested Artisan's profile and confirms the booking.
+\vspace{4pt}
+\end{minipage} \\
+\hline
+\end{tabular}
+\caption{Use case: Schedule an appointment}
+\label{tab:Schedule an appointment}
+\end{table}
+
+\subsubsection{Use Case :approve artisan account creation}
+The following figure (figure:\ref{fig:approve artisan account creation}) represents the sequence diagram of the <<Approve artisan account creation>> use case 
+%\begin{figure}[H]
+ %   \centering
+  %  \includegraphics[width=0.98\textwidth]{sequance-admin_validation.drawio (1).png.png}
+   % \caption{approve artisan account sequence diagram}
+    %\label{fig:approve artisan account creation}
+%\end{figure}
+The following table (Table:\ref{tab:validate-artisan}) represents the textual description corresponding to the previous sequence diagram(Figure\ref{fig:approve artisan account creation}):
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1}
+\begin{tabular}{|>{\bfseries\arraybackslash}m{3cm}|>{\arraybackslash}m{12cm}|}
+\hline
+\multicolumn{2}{|c|}{\cellcolor[HTML]{1F4E79}\textcolor{white}{\textbf{Approve Artisan Account}}} \\
+\hline
+Title & Approve Artisan Account \\
+\hline
+Actor & Admin \\
+\hline
+Objective & Approve a pending artisan account. \\
+\hline
+Precondition &
+\begin{minipage}[t]{10cm}
+\vspace{4pt}
+\begin{itemize}[leftmargin=*, nosep]
+    \item The Admin must be authenticated.
+    \item There are pending artisan accounts.
+\end{itemize}
+\vspace{4pt}
+\end{minipage} \\
+\hline
+Nominal Scenario &
+\begin{minipage}[t]{10cm}
+\vspace{4pt}
+    1.The Admin views the list of pending artisans.\\
+    2.The Application retrieves pending artisans from the Database.\\
+    2.1 The Application displays the list.\\
+    3. The Admin selects and approves an artisan.\\
+    4.The Application sends the approval request to the Database.\\
+    4.1. The Database confirms success.\\
+    3.1. The Application shows a success message to the Admin.
+\vspace{4pt}
+\end{minipage} \\
+\hline
+Alternative Scenario & \textbf{A1: Error during approval (e.g., connection issue).} \newline
+3.2. The Application displays an error message. \\
+\hline
+\end{tabular}
+\caption{Textual Description of the Use Case<< Approve Artisan Account>>}
+\label{tab:validate-artisan}
+\end{table}
+
+\subsection{Definition of the Activity diagram}
+The activity diagram must represent all the actions performed by the system, including all conditional branches and possible loops. It is a directed graph of actions and transitions. Transitions are crossed when actions are completed; activities can be performed either in parallel or sequentially\cite{ref2}
+ \subsection{Presentation of the Activity Diagram}
+ The following figure (Figure\ref{fig:Activity Diagram}) represents the Activity Diagram of the System : 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.98\textwidth]{activity.drawio.png}
+    \caption{Activity diagram}
+    \label{fig:Activity Diagram}
+\end{figure}
+\subsection{Textual Description of the Activity Diagram}
+In this part, we present the textual description of the previous activity diagram(Figure\ref{fig:Activity Diagram}) :\newline
+The service request process revolves around three main actors: the \textbf{Client}, the \textbf{Application}, and the \textbf{Artisan}. It unfolds as follows:
+
+\vspace{8pt}
+
+\textbf{Service Request Initiation}: The client initiates the process by creating a service request through the application. This request can be of three types: \textbf{urgent}, \textbf{normal}, or in the form of a \textbf{direct message} sent to the artisan. Depending on the selected type, the application notifies the matching artisans (urgent case) or displays the request on the artisans' home page (normal case).
+
+\vspace{8pt}
+
+\textbf{Artisan Request Processing}: The artisan reviews the request and decides whether to \textbf{accept} or \textbf{decline} it. In the event of a refusal, the process ends. If accepted, both parties enter a negotiation phase through the integrated messaging system in order to agree on the details of the service. If no agreement is reached, The process is completed.Otherwise, an appointment is scheduled.
+
+\vspace{8pt}
+
+\textbf{Confirmation and Verification}: The appointment must be confirmed through the application. On the day of the appointment, the artisan travels to the client's location. Upon arrival, the client verifies the artisan's identity by \textbf{scanning their QR code}. If the identity is not confirmed, the process stops. Otherwise, the artisan proceeds with the execution of the service.
+
+\vspace{8pt}
+
+\textbf{Service Completion}: Once the service is completed, the application automatically unlocks the evaluation module. The client then \textbf{rates the artisan}, which marks the end of the process.
+\section{Design}
+\subsection{ Definition of the Class Diagram}
+   \textbf{The class diagram} is generally considered \textbf{the most important diagram }in object-oriented development. It represents the conceptual architecture of the system: it describes the classes used by the system, as well as the relationships between them, whether they represent a \textbf{conceptual hierarchy} (inheritance) or an \textbf{organic relationship }(aggregation)\cite{ref4}
+\subsection{Data Dictionary}
+\begin{itemize}
+    \item The following table (Table\ref{tab:Data Dictionary})represents the data dictionary of our system:
+\end{itemize}
+
+\begin{table}[H]
+\centering
+\begin{adjustbox}{max width=\textwidth, max totalheight=\textheight, keepaspectratio}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|>{\arraybackslash}m{7cm}|>{\centering\arraybackslash}m{1.5cm}|>{\centering\arraybackslash}m{1.5cm}|>{\arraybackslash}m{5cm}|}
+\hline
+\cellcolor[HTML]{1F4E79}\textcolor{white}{\textbf{Classe}} & \multicolumn{3}{c|}{\cellcolor[HTML]{1F4E79}\textcolor{white}{\textbf{Attributs}}} & \cellcolor[HTML]{1F4E79} & \cellcolor[HTML]{1F4E79}\textcolor{white}{\textbf{Methodes}} \\
+\hline
+\cellcolor[HTML]{1F4E79} & \cellcolor[HTML]{1F4E79}\textcolor{white}{\textbf{Name}} & \cellcolor[HTML]{1F4E79}\textcolor{white}{\textbf{Description}} & \cellcolor[HTML]{1F4E79}\textcolor{white}{\textbf{Type}} & \cellcolor[HTML]{1F4E79}\textcolor{white}{\textbf{Size}} & \cellcolor[HTML]{1F4E79} \\
+\hline
+\multirow{5}{*}{User} & username & Unique name of the user & A & 50 & \multirow{5}{*}{\parbox{3.5cm}{Login() \\ Logout() \\ UpDateProfile() \\ ChangePassword()}} \\
+ & email & Email address of the user & AN & 100 & \\
+ & password & Encrypted password & AN & 255 & \\
+ & creationDate & Date creation of user account & Date & & \\
+ & phoneNumber & Phone number of the user & A & 15 & \\
+\hline
+Client & Id\_client & Unique identifier of the client & A & 10 & UpDatePayement() \\
+\hline
+Administrator & Id\_admin & Unique identifier of the client & AN & 10 & \\
+\hline
+Moderator & Id\_moderator & Unique identifier of the moderator & AN & 10 & \parbox{3.5cm}{ValidationArtisanAccount() \\ BanUser()} \\
+\hline
+\multirow{7}{*}{Artisan} & Id\_artisan & Unique identifier of the artisan & AN & 10 & \multirow{7}{*}{\parbox{3.5cm}{UpDateBio() \\ SetAvailability(Status) \\ UploadDiploma() \\ UploadID\_card()}} \\
+ & location & Geographic location of the artisan & A & 100 & \\
+ & category & Trade category of the artisan & A & 50 & \\
+ & activeStatus & Indicates id artisan is active & B & & \\
+ & diploma & Diploma or certification name & A & 100 & \\
+ & bio & Short biography of the artisan & AN & 255 & \\
+ & ID\_card & Identity card document of the artisan & AN & 50 & \\
+\hline
+\multirow{3}{*}{Report} & Id\_repot & Unique identifier of the report & AN & 10 & \multirow{3}{*}{\parbox{3.5cm}{Submit\_Report() \\ Process\_Report() \\ Close\_Report() \\ sendNotification()}} \\
+ & description & Description of the reported issue & AN & 255 & \\
+ & Status & Current status of the report & A & 20 & \\
+\hline
+\multirow{4}{*}{Review} & Id\_review & Unique identifier of the review & AN & 10 & \multirow{4}{*}{\parbox{3.5cm}{Create\_Review() \\ CalculateRatingScore()}} \\
+ & comment & Comment left by the client & AN & 255 & \\
+ & creatAT & Date the review was created & Date & & \\
+ & ratingScore & Score given to the artisan & N & 1 & \\
+\hline
+\multirow{4}{*}{Request} & Id\_Request & Unique identifier of the request & AN & 10 & \\
+ & requestDate & Date the request was submitted & Date & & \\
+ & status & Current status of the request & A & 20 & \\
+ & description & Description of the request & AN & 255 & \\
+\hline
+Urgent & deadline & Deadline date of the urgent request & Date & & \multirow{2}{*}{sendNotification(post)} \\
+ & priorityLevel & Priority level of the request & N & 1 & \\
+\hline
+Simple & messageContent & Content of the simple request message & AN & 255 & \\
+\hline
+\multirow{3}{*}{Appointement} & Id\_appointement & Unique identifier of the appointment & AN & 10 & \multirow{3}{*}{\parbox{3.5cm}{Confirm\_Appointe() \\ Cancel\_Appointe() \\ Complete\_Appointe() \\ sendNotification()}} \\
+ & scheduleTime & Scheduled date and time of the appointment & DateTime & & \\
+ & status & Current status of the appointement & A & 20 & \\
+\hline
+\multirow{3}{*}{Message} & Id\_message & Unique identifier of the message & AN & 10 & \multirow{3}{*}{\parbox{3.5cm}{Sendmsg() \\ DeleteConversation() \\ sendNotification(message)}} \\
+ & text & Text content of the message & AN & 255 & \\
+ & timestamp & Date and time the message was sent & DateTime & & \\
+\hline
+\multirow{5}{*}{Post} & Id\_post & Unique identifier of the post & AN & 10 & \multirow{5}{*}{\parbox{3.5cm}{Publish\_Post() \\ edit\_post(newContent) \\ remove\_post() \\ approve\_post() \\ sendNotification()}} \\
+ & Content & Content of the post & AN & 255 & \\
+ & approvalStatus & Approval status of the post & A & 20 & \\
+ & creatAT & Date the post was created & Date & & \\
+ & image & URL or path of the image & AN & 255 & \\
+\hline
+\multirow{2}{*}{Follow} & Id\_follow & Unique identifier of the follow & AN & 10 & \multirow{2}{*}{\parbox{3.5cm}{Follow() \\ Unfollow()}} \\
+ & followingDate & Date of the following & DateTime & & \\
+\hline
+\end{tabular}
+\end{adjustbox}
+\caption{Data dictionary}
+\label{tab:Data Dictionary}
+\end{table}
+
+\subsection{The Management Rules}
+     The following business rules govern the behavior and constraints of the proposed system:
+
+\begin{enumerate}
+    \item \textbf{A user} must have a unique username, email address, password, creation date, and phone number.
+    \item A user can hold one of the following roles: \textbf{Client, Artisan, Moderator, or Administrator}. These roles are mutually exclusive and are implemented through inheritance from the abstract class User.
+    \item A Moderator is \textbf{responsible for validating }artisan accounts and is \textbf{authorized} to ban users who violate platform policies.
+    \item A Moderator manages one or more Reports submitted by clients. Each Report is associated with exactly one Moderator.
+    \item \textbf{A Client} may submit one or more Requests. Each Request is associated with exactly one Client.
+    \item A Request is specialized into one of two subtypes: \textbf{Urgent}, characterized by a deadline and a priority level, or \textbf{Simple}, characterized by a text message. These subtypes are mutually exclusive.
+    \item Only \textbf{Urgent requests} trigger a push notification, invoked via the \texttt{sendNotification()} operation defined in the Urgent class.
+    \item A Client may follow zero or more Artisans. Conversely, an Artisan may be followed by zero or more Clients. This many-to-many relationship is reified through the association class Follow, which records the follow date and active status.
+    \item A Client may schedule zero or more Appointments with an Artisan. Each Appointment is associated with exactly one Client and exactly one Artisan, and is characterized by a scheduled time and a status.
+    \item An Artisan may publish one or more Posts. Each Post must receive an administrative approval before becoming publicly visible, as indicated by the \texttt{approvalStatus} attribute.
+    \item A Client may submit a Review for an Artisan, comprising a textual comment and a numerical rating score. The Review records the creation date and contributes to the Artisan's overall rating, computed via the \texttt{calculateRatingScore()} operation.
+    \item A Client and an Artisan may exchange Messages. This many-to-many interaction is mediated through the Message class, which stores the message text and timestamp.
+    \item An Artisan must upload a professional diploma and a valid identity card document as part of the registration process. These documents are subject to verification by a Moderator.
+    \item An Artisan's account status (\texttt{ActiveStatus}) must be set to \texttt{APPROVED} before the Artisan is permitted to accept Appointment requests or have Posts published.
+\end{enumerate}
+\subsection{Presentation of the Class Diagram}
+The following figure(Figure\ref{fig:class-diagram} )illustrates the class diagram of the application:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{class diagram1.jpg}
+    \caption{Class Diagram}
+      \label{fig:class-diagram}
+\end{figure} 
+\subsection{From the Class Diagram to the Relational Model}
+The transformation from the object-oriented class diagram to the relational model is governed 
+by a set of standard mapping rules, applied as follows:
+\begin{itemize}
+    \item \textbf{Rule 1 — Class mapping:} Each class is mapped to a relational table. The attributes of the class become the columns of the table, and the identifier attribute becomes the primary key.
+    \item \textbf{Rule 2 — One-to-one association:} Each one-to-one (1:1) association is handled by migrating the primary key of one relation into the other as a foreign key.
+    \item \textbf{Rule 3 — One-to-many association:} Each one-to-many (1:N) association is handled by migrating the primary key of the relation on the "one" side into the relation on the "many" side as a foreign key.
+    \item \textbf{Rule 4 — Many-to-many association:} Each many-to-many (M:N) association is handled by creating a new relation whose primary key is the concatenation of the primary keys of the participating relations. Any attributes belonging to the association class are also included in this new relation.
+\end{itemize}
+Applying the above mapping rules to the class diagram(Figure:\ref{fig:class-diagram}), the resulting relational schema comprises the following relations:
+\begin{itemize}[leftmargin=*, nosep]
+    \item[] \texttt{User(\underline{id\_user}, username, email, password, creationDate, phoneNumber)}
+    
+    \vspace{6pt}
+    \item[] \texttt{Client(\underline{id\_client}, \#id\_user)}
+    
+    \vspace{6pt}
+    \item[] \texttt{Artisan(\underline{id\_artisan}, location, category, activesStatus, bio, diploma, ID\_card, \#id\_user)}
+    
+    \vspace{6pt}
+    \item[] \texttt{Moderator(\underline{id\_moderator}, \#id\_user)}
+    
+    \vspace{6pt}
+    \item[] \texttt{Administrator(\underline{id\_admin}, \#id\_user)}
+    
+    \vspace{6pt}
+    \item[] \texttt{Report(\underline{id\_report}, description, status, \#id\_moderator)}
+    
+    \vspace{6pt}
+    \item[] \texttt{Request(\underline{id\_request}, requestDate, status, description, \#id\_client)}
+    
+    \vspace{6pt}
+    \item[] \texttt{Post(\underline{id\_post}, content, approvalStatus, creatAt, image, \#id\_artisan)}
+    
+    \vspace{6pt}
+    \item[] \texttt{Urgent(\underline{id\_urgent}, deadline, priorityLevel, \#id\_request)}
+    
+    \vspace{6pt}
+    \item[] \texttt{Simple(\underline{id\_simple}, messageContent, \#id\_request)}
+    
+    \vspace{6pt}
+    \item[] \texttt{Appointment(\underline{\#id\_client, \#id\_artisan}, scheduledTime, status)}
+    
+    \vspace{6pt}
+    \item[] \texttt{Follow(\underline{\#id\_client, \#id\_artisan}, followingDate, isActive)}
+    
+    \vspace{6pt}
+    \item[] \texttt{Message(\underline{id\_message}, text, timestamp, \#id\_client, \#id\_artisan)}
+    
+    \vspace{6pt}
+    \item[] \texttt{Review(\underline{id\_review}, comment, creatAT, ratingScore, \#id\_client, \#id\_artisan)}
+\end{itemize}
+\section{Conclusion}
+  This chapter covered the \textbf{three essential stages} of the development of our 
+ system.\textbf{The requirements expression} made it possible to identify the actors and their functionalities through \textbf{the use case diagram}. \textbf{The analysis phase} described the dynamic behavior of the system using\textbf{ sequence and activity diagrams}. Finally, \textbf{the design phase} formalized the system architecture through \textbf{the class diagram}.
+ At the end of this chapter, we now have a solid and coherent foundation that will guide \textbf{the implementation phase }discussed in \textbf{the following chapter}.
+\chapter{Implementation}
+\section{Introduction}
+This chapter is dedicated to the \textbf{implementation phase} of our \textbf{Allo Artisan} application. We will begin by presenting the working environment by describing the languages, frameworks, and tools used during the development process, as well as the system deployment architecture.
+
+Subsequently, we will highlight the graphical interfaces of the application through commented screenshots, thus reflecting the final result of the development work carried out for the two main actors: the \textbf{client} and the \textbf{artisan}.
+\section{Working Environment}
+In this part, we will present the tools that we will use to develop our application.
+\subsection{Language and Framework}
+    \subsubsection*{\textbf{Go language}}
+    \begin{minipage}[c]{0.65\textwidth}
+An open-source programming language supported by Google, Easy to learn and great for teams, Its Built-in concurrency and a robust standard library,it is used to develop the backend and expose REST API. \cite{ref6}
+\end{minipage}
+\hfill
+    \begin{minipage}[c]{0.3\textwidth}
+    \centering
+    \includegraphics[width=2.5cm]{go langage.png}
+    \captionof{figure}{Logo of Go language}
+    \label{fig:Go language}
+\end{minipage}
+
+\subsubsection*{\textbf{Flutter}}
+\begin{minipage}[c]{0.65\textwidth}
+Flutter is an open-source framework a Google based on the Dart language, allowing the development of mobile applications multi-platform applications from a single code base, it was used to design the user interface of our application \cite{ref7}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.3\textwidth}
+    \centering
+    \includegraphics[width=2.5cm]{Flutter.png}
+    \captionof{figure}{Logo of Flutter}
+    \label{fig:Flutter}
+\end{minipage}
+
+
+\subsection{Development Tools}
+
+% ===== VS Code =====
+\subsubsection*{\textbf{VS Code}}
+\begin{minipage}[c]{0.65\textwidth}
+A standalone source code editor that runs on Windows, macOS, and Linux, Mainly used for backend development in Go. \cite{ref8}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.3\textwidth}
+    \centering
+    \includegraphics[width=2.5cm]{vs code.jpg}
+    \captionof{figure}{Logo of Visual studio }
+    \label{fig:Vs code}
+\end{minipage}
+\vspace{10pt}
+
+% ===== Android Studio =====
+\subsubsection*{\textbf{Android Studio}}
+\begin{minipage}[c]{0.65\textwidth}
+The official IDE for Android application development, The emulation and testing of the Flutter application on virtual device. \cite{androidstudio}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.3\textwidth}
+    \centering
+    \includegraphics[width=2.5cm]{Android studio.png}
+    \captionof{figure}{Logo of Android Studio }
+    \label{fig:Andoid Studio}
+\end{minipage}
+\vspace{10pt}
+
+% ===== Docker =====
+\subsubsection*{\textbf{Docker}}
+    \begin{minipage}[c]{0.65\textwidth}
+A containerization tool that allows the backend and its dependencies to be packaged into isolated containers, ensuring stable and portable deployment. \cite{docker}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.3\textwidth}
+    \centering
+    \includegraphics[width=2.5cm]{doker.png}
+    \captionof{figure}{Logo of docker }
+    \label{fig:docker}
+    \end{minipage}
+\vspace{10pt}
+
+% ===== PostgreSQL =====
+\subsubsection*{\textbf{PostgreSQL}}
+\begin{minipage}[c]{0.65\textwidth}
+PostgreSQL is a powerful, open source object-relational database system, it was used to store and manage all the data of our application. \cite{postgresql}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.3\textwidth}
+    \centering
+    \includegraphics[width=2.5cm]{postgresql.jpg}
+    \captionof{figure}{Logo of PostgreSQL }
+    \label{fig:PostgreSQL}
+\end{minipage}
+\section{Deployment Diagram}
+\subsection{Definition of the Deployment Diagram }
+A deployment diagram describes the physical arrangement of the hardware resources that make up the system and shows the distribution of components across this hardware. Each resource is represented by a node, and the deployment diagram specifies how the components are distributed on the nodes as well as the connections between the components or the nodes. Deployment diagrams exist in two forms: specification and instance.\cite{ref5}
+\subsection{presentation of deployment diagram}
+The following figure \ref{fig:deployment digram} presented the class diagram of the application:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{deployment diagram.jpg}
+    \caption{Deployment Diagram} 
+      \label{fig:deployment digram}
+\end{figure} 
+\subsection{textual description of deployment diagram}
+The diagram is structured around three distinct deployment nodes, each grouping one or more software components that fulfill well-defined roles within the system.
+
+\paragraph{1.1 Client Node — Smartphone Android/iOS}
+
+This node represents the execution environment on the end-user side, namely a mobile device running an Android or iOS operating system. It hosts the following component:
+
+\begin{itemize}[leftmargin=0.5cm]
+    \item \textbf{ «Flutter App»Component:} This is the mobile application developed using the Flutter framework. It constitutes the presentation layer of the system and is responsible for rendering the user interface, handling user interactions, and forwarding requests to the remote backend via the HTTPS/REST API interface.
+\end{itemize}
+
+\paragraph{1.2 Server Node — Mobile App Layer + Backend Server}
+
+This node groups all server-side application components. It acts as an intermediary between the client layer and the persistence layer and hosts two distinct components:
+
+\begin{itemize}[leftmargin=0.5cm]
+    \item \textbf{ «Flutter + Dart»Component:} This component represents the server-side application logic layer developed in Dart. It receives requests from the mobile application through the HTTPS/REST interface, processes them, and routes them to the internal API server via Internal API Calls using the REST/JSON format.
+    
+    \item \textbf{ «Go REST API Server»Component:} This component constitutes the core of the business logic layer. Developed in the Go programming language (Golang), it exposes a RESTful API consumed by the Dart component and is responsible for executing SQL queries against the database management system.
+\end{itemize}
+
+\paragraph{1.3 Persistence Node — Database Server}
+
+This node corresponds to the data persistence layer of the system. It hosts the following component:
+
+\begin{itemize}[leftmargin=0.5cm]
+    \item \textbf{ «PostgreSQL DB»Component:} This is the PostgreSQL relational database management system (RDBMS).It ensures the storage, persistence, and integrity of application data. It receives SQL queries issued by the Go REST API Server and returns the corresponding results.
+\end{itemize}
+
+\subsubsection*{2. Communication Flows and Protocols}
+
+The interactions between the different system components are represented by dashed connectors, consistent with the UML notation for dependency relationships. The table below summarizes all identified communication flows:
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|>{\arraybackslash}m{3cm}|>{\arraybackslash}m{3cm}|>{\arraybackslash}m{3cm}|>{\arraybackslash}m{4cm}|}
+\hline
+\cellcolor[HTML]{1F4E79}\textcolor{white}{\textbf{Source}} & \cellcolor[HTML]{1F4E79}\textcolor{white}{\textbf{Destination}} & \cellcolor[HTML]{1F4E79}\textcolor{white}{\textbf{Protocol}} & \cellcolor[HTML]{1F4E79}\textcolor{white}{\textbf{Description}} \\
+\hline
+Flutter App (Client) & Flutter + Dart (Server) & HTTPS / REST API & Transmission of user requests to the backend via a secured API \\
+\hline
+Flutter + Dart (Server) & Go REST API Server & Internal API Calls (REST/JSON) & Routing of requests from the presentation layer to the business logic layer \\
+\hline
+Go REST API Server & PostgreSQL DB & SQL Queries & Execution of CRUD operations on the relational database \\
+\hline
+\end{tabular}
+\caption{Communication Flows and Protocols}
+\label{tab:communication}
+\end{table}
+\section{Application Overview}
+ In this part, we will present our application: <<\textbf{Allo Artisan}>> 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{logo.jpg}
+    \caption{logo of the application} 
+      \label{fig:logo}
+\end{figure}
+\textbf{Allo Artisan} is a \textbf{mobile application }developed with the aim of facilitating the connection between clients looking for services and artisans offering their skills in various fields.
+\section{Application Interface}
+In this part, we will present the interfaces of our application:
+\subsubsection{Login Interface}
+The adjacent figure (Figure \ref{fig:login})represents the Login interface of our Allo Artisan application:
+\begin{minipage}[c]{0.55\textwidth}
+This interface is the \textbf{first page displayed} to the user when launching the application. It offers \textbf{two login modes} through a "Client" and "Artisan" selector, allowing each type of user to authenticate according to their role. The user must enter their \textbf{email address or username}, as well as their \textbf{password}, to access their account. A \textbf{"Login"} button is provided to validate the authentication process. The application also offers the possibility to \textbf{"Continue as a Visitor"} in order to \textbf{access certain features without an account}. For new users, two links are available at the bottom of the page: \textbf{"Client Registration"} and \textbf{"Artisan Registration"}, each redirecting to the corresponding registration form.
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.38\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{login_screen.png}
+    \captionof{figure}{Login Interface}
+    \label{fig:login}
+\end{minipage}
+
+\vspace{15pt}
+% ===== 3.4.2 Create Artisan Account Interface =====
+\subsubsection{Create Artisan Account Interface}
+The figure above(Figure\ref{fig:create-artisan}) presents the artisan account creation interface in our Allo Artisan application :
+\begin{itemize}
+    \item \textbf{Step 1} – Personal Information:
+        The artisan must add a profile picture and fill in their personal information, including their first name, last name, professional category, wilaya, baladeya,municipality and intervention area. A “Next” button allows them to proceed to the next step.
+    \item \textbf{Step 2} – Documents:
+        The artisan must upload two required documents: an official document such as an identity card or criminal record extract, as well as a diploma or professional certification.A “Next” button allows them to continue.
+    \item \textbf{Step 3} – Account:
+        The artisan must enter their email address, phone number, password, and confirm the password. A “Sign Up” button completes the account creation process.
+\end{itemize}
+
+\vspace{10pt}
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[c]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{register_step1.png}
+        \caption{Step 1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[c]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{register_step2.png}
+        \caption{Step 2}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[c]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{register_step3.png}
+        \caption{Step 3}
+    \end{subfigure}
+    \caption{Create Artisan Account Interface}
+    \label{fig:artisan_account}
+\end{figure}
+\subsubsection{Client Home Page Interface}
+
+\begin{minipage}[c]{0.55\textwidth}
+The figure adjacent (Figure\ref{fig:home}) represents the client home interface of the Allo Artisan application. It displays the recent publications of artisans, where each publication includes:
+The artisan’s profile picture, name, and professional category
+The artisan’s rating
+An image illustrating the completed work
+A description of the service provided
+Interactions in the form of likes, comments, and shares
+
+A “+ Share a Request” button allows the client to publish a new service request. At the top of the page, a search bar enables the client to quickly find an artisan, accompanied by a QR code scan button that allows the client to directly scan an artisan’s QR code and access their profile instantly.
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.38\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{home_screen_client.png}
+    \captionof{figure}{Home Page Interface}
+    \label{fig:home}
+\end{minipage}
+\subsubsection{Client Share a Request Interface}
+The figure(Figure \ref{fig:request})represents the service request sharing interface of the \textbf{Allo Artisan} application. This interface appears as a popup when the client clicks on the \textbf{"+ Share a Request"} button. It offers two types of requests:
+
+\vspace{10pt}
+
+\textbf{Normal Request:} When the client selects the "Normal" mode, a blue message informs them that "Your request will be visible in the artisans' feed." The client must then fill in the service category, their area, and a detailed description of the request.
+
+\vspace{10pt}
+
+\textbf{Urgent Request:} When the client selects the "Urgent" mode, a red warning message indicates that "Active artisans will be notified immediately," ensuring a quick response. The client provides the same information as for a normal request.
+
+\vspace{10pt}
+
+In both cases, a \textbf{"Send"} button allows the client to submit the request, while a \textbf{"Cancel"} button closes the popup without saving.
+
+\vspace{15pt}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[c]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{demand_normal.png}
+        \caption{Normal Request}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[c]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{demand_urgent.png}
+        \caption{Urgent Request}
+    \end{minipage}
+    \caption{Service Request Sharing Interface}
+    \label{fig:request}
+\end{figure}
+\subsubsection{Search for an Artisan Interface} 
+\begin{minipage}[c]{0.55\textwidth}
+    The illustrated interface(Figure\ref{fig:Search}) is a search screen of the Allo Artisan application. It offers three filters: the selection of the service category (here, plumbing), the maximum search distance using a slider, and the desired minimum rating. A “Reset” button allows the user to clear all filters with a single click
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.38\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{search.png}
+    \captionof{figure}{Search for an artisan Interface}
+    \label{fig:Search}
+\end{minipage}
+
+\subsubsection{Profile Artisan Interface}
+The figure above represents the profile interface of the Allo Artisan application on the artisan side, available in two views :
+
+\textbf{Private View (accessible by the artisan) :} 
+The artisan can consult and manage his complete profile. Displays his name, job category, rating, and email address. It also offers:
+\newline
+$\bullet$ A "QR Code" button to generate his personal QR code \newline
+$\bullet$ A "Settings" button to modify his information \newline
+$\bullet$ A visibility status that can be toggled to appear or not to clients \newline
+$\bullet$ Management of his availabilities via a calendar \newline
+$\bullet$ The list of his subscribers \newline
+$\bullet$ A"Create a publication"section to share his work with a photo 
+\vspace{10pt}
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[c]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{privayte_profile.png}
+        \caption{Profile 1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[c]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{privat_profile2.png}
+        \caption{Profile 2}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[c]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{private_profile3.png}
+        \caption{Profile 3}
+    \end{subfigure}
+    \caption{Artisan Profile Interface}
+    \label{fig:artisan_Private Profile}
+\end{figure}
+\textbf{Public View (visible to clients):}
+Clients can view the artisan’s public profile, which displays their name, category, rating, and email address. Two action buttons are available — “Follow” and “Message” — allowing the client to follow the artisan or contact them directly. It also presents:
+
+Their personal QR code,
+Their visibility status,
+Their availability, including working days and hours,
+the list of their followers,
+and their published work posts that showcase completed services.
+ \vspace{10pt}
+
+%\begin{figure}[h]
+ %\begin{subfigure}[c]{0.3\textwidth}
+  %      \includegraphics[width=\textwidth]%{artisan_public_profil2.png}
+  %      \caption{Profile}
+   % \end{subfigure}
+   % \hfill
+    %\begin{subfigure}[c]{0.3\textwidth}
+   %     \includegraphics[width=\textwidth]%{artisan_public_profil2.png}
+   %     \caption{Public profile }
+   % \end{subfigure}
+    %\caption{Artisan Public Profile Interface}
+    %\label{fig:artisan_Public Profile}
+%\end{figure}
+\section{Conclusion}
+This chapter presents the implementation phase of our Allo Artisan application. We described the tools and technologies used during the development process,then illustrated the different interfaces of the application intended for both the client and the artisan. This chapter therefore concludes our project by translating all the previous stages into a concrete and functional mobile application
+\chapter*{General Conclusion}
+\thispagestyle{empty}
+\setcounter{page}{0} 
+\addcontentsline{toc}{chapter}{General Conclusion}
+
+This project was carried out with the objective of designing and developing \textbf{Allo Artisan}, a 
+mobile application dedicated to facilitating the connection between clients and artisans in 
+Algeria. Throughout the different phases of this work, we followed a structured and 
+progressive methodology that ensured consistency between the identified requirements and 
+the delivered solution.
+\newline
+We began by analyzing existing platforms in the same domain, which allowed us to identify 
+their key limitations and define a clear problem statement. This study guided us in 
+designing a solution structured around three axes — \textbf{trust, functionality, and usability} —
+materialized through features such as QR code-based identity verification, diploma validation, 
+a multi-criteria search system, an availability calendar, and a post and notification mechanism 
+for service requests.
+\newline
+The system was then modeled using a comprehensive set of UML diagrams before being 
+implemented using \textbf{Java for Android}, with \textbf{PostgreSQL} as the database management system. \newline
+The resulting application offers a reliable and accessible experience for clients , artisans, and administrators alike.\newline
+
+As a perspective, future enhancements could include the integration of an \textbf{AI-based 
+recommendation system}, an \textbf{in-app payment module}, and the development of a 
+\textbf{complementary web platform} — improvements that would further strengthen Allo Artisan as 
+a scalable and sustainable solution for the digitalization of artisan services in Algeria.
+\newpage
+\addcontentsline{toc}{chapter}{Bibliography}
+\addcontentsline{toc}{section}{Webography}
+
+\begin{thebibliography}{99}
+
+% ===== BIBLIOGRAPHY (Livres) =====
+\section*{Bibliography}
+
+\bibitem{ref3}
+B. Charroux, A. Osmani, Y. Thierry-Mieg,
+\textit{UML 2 -- Pratique de la modélisation},
+2\textsuperscript{e} édition,
+Pearson Education, collection Synthex.
+
+\bibitem{ref2}
+P. Roques,
+\textit{UML 2 par la pratique -- Études de cas et exercices corrigés},
+5\textsuperscript{e} édition,
+Eyrolles.
+
+% ===== WEBOGRAPHY (Sites web) =====
+\section*{Webography}
+
+\bibitem{ref1}
+uml-diagrams.org,
+\textit{UML Use Case Diagrams},
+\url{https://www.uml-diagrams.org/use-case-diagrams.html},
+Accessed: 2026-05-10.
+
+\bibitem{ref4}
+L. Audibert,
+\textit{Cours UML - Diagramme de Classes},
+\url{https://laurent-audibert.developpez.com/Cours-UML/?page=diagramme-classes#L3},
+Accessed: 2026-05-18.
+
+\bibitem{ref5}
+L. Audibert,
+\textit{Cours UML - Diagrammes de Composants et de Déploiement},
+\url{https://laurent-audibert.developpez.com/Cours-UML/?page=diagrammes-composants-deploiement#L8-3},
+Accessed: 2026-05-18.
+
+\bibitem{ref6}
+The Go Authors,
+\textit{The Go Programming Language},
+\url{https://go.dev/},
+Accessed on May 22, 2026.
+
+\bibitem{ref7}
+Flutter,
+\textit{Flutter},
+\url{https://flutter.dev/},
+Accessed on May 22, 2026.
+
+\bibitem{ref8}
+Visual Studio Code,
+\textit{Visual Studio Code},
+\url{https://code.visualstudio.com/},
+Accessed on May 22, 2026.
+
+\bibitem{androidstudio}
+Android Studio,
+\textit{Android Studio},
+\url{https://developer.android.com/studio},
+Accessed on May 22, 2026.
+
+\bibitem{docker}
+Docker Inc,
+\textit{Docker},
+\url{https://www.docker.com/},
+Accessed on May 22, 2026.
+
+\bibitem{postgresql}
+PostgreSQL,
+\textit{PostgreSQL},
+\url{https://www.postgresql.org/},
+Accessed on May 22, 2026.
+
+\end{thebibliography}
+\end{document}
