@@ -1,75 +1,69 @@
 \documentclass[12pt,a4paper]{report}
 
-\usepackage{geometry}            % Controls page margins
-\geometry{margin=2.5cm}          % Sets all margins to 2.5 cm
-% Colors
+% =========================
+% PAGE & COLORS
+% =========================
+\usepackage{geometry}
+\geometry{top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm}
+
 \usepackage{xcolor}
-% For custom lists
-\usepackage{enumitem}
-\usepackage{wrapfig}
-
-\usepackage{fontspec}
-\newfontfamily{\symbolfont}{Arial}
-
-%\setlist[itemize]{label={\symbolfont✦}, itemsep=3pt, topsep=3pt}
-
-\usepackage{comment}    % to i can write a paragraphe of comments 
-%\usepackage{enumitem}   % to items like →
-
-
-% Apply ✦ globally to all itemize lists
-\setlist[itemize]{label={\symbolfont}, itemsep=6pt, topsep=6pt}
-% Font management (required for XeLaTeX)
-%\usepackage{fontspec}
-% Symbol font
-%\newfontfamily{\symbolfont}{DejaVu Sans}   % for the star ✦
-
-
-\usepackage{setspace}            % Controls line spacing
-\setstretch{1.2}                 % Sets line spacing to 1.2
-
-\usepackage{graphicx}            % Allows inserting images
-\usepackage{float}               % Enables precise float placement using [H]
-
-\usepackage{booktabs}            % Professional-quality tables (toprule, midrule, bottomrule)
-\usepackage{array}               % Extended column formatting options
-\usepackage[table]{xcolor}       % Enables colors inside tables
-\usepackage{colortbl}            % Additional color support for tables
-
-% --- Custom subtle academic colors ---
-\definecolor{headercolor}{RGB}{230,240,250}   % Light blue for table header
-\definecolor{rowcolorlight}{RGB}{248,250,252} % Very light gray for alternating rows
-
-\usepackage{fontspec}            % Allows system font selection (XeLaTeX/LuaLaTeX only)
-\usepackage{unicode-math}        % Enables modern math font handling
-
-\setmainfont{TeX Gyre Termes}    % Sets main document font (similar to Times)
-\setmathfont{TeX Gyre Termes Math} % Sets math font
-
-\usepackage{polyglossia}         % Modern multilingual support for XeLaTeX
-
-\setmainlanguage{english}        % Main document language
-\setotherlanguage{arabic}        % Secondary language (Arabic support)
-\hyphenpenalty=10000             % Prevents word hyphenation
-\exhyphenpenalty=10000           % Prevents explicit hyphen breaks
-
-
-% ===== Elegant marked lists =====
-\usepackage{enumitem}
-\usepackage{xcolor}
-% Colors
 \definecolor{strengthblue}{RGB}{0,102,153}
 \definecolor{weakred}{RGB}{180,40,40}
+\definecolor{algeriablue}{RGB}{0,114,198}
+\definecolor{lightblue}{RGB}{225,238,252}
 
+% =========================
+% FONT SYSTEM (IMPORTANT FIX)
+% =========================
+\usepackage{fontspec}
+\usepackage{unicode-math}
 
-% Small elegant symbols
+\setmainfont{TeX Gyre Termes}
+\setmathfont{TeX Gyre Termes Math}
+
+% Arabic font (ONLY ONCE → FIXED)
+\newfontfamily\arabicfont[Script=Arabic,Scale=1.2]{Amiri}
+
+% =========================
+% MULTILINGUAL (FIXED)
+% =========================
+\usepackage{polyglossia}
+\setmainlanguage{english}
+\setotherlanguage{arabic}
+
+% =========================
+% LISTS & STYLE
+% =========================
+\usepackage{enumitem}
+\usepackage{wrapfig}
+\usepackage{setspace}
+\setstretch{1.2}
+
 \newcommand{\good}{\textcolor{strengthblue}{\small $\blacktriangleright$}}
 \newcommand{\bad}{\textcolor{weakred}{\Large $\bullet$}}
- \usepackage{longtable}
-\usepackage{multirow}
+
+% =========================
+% TABLES & GRAPHICS
+% =========================
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
 \usepackage{array}
-\usepackage{caption}
 \usepackage{colortbl}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{caption}
+\usepackage{adjustbox}
+\usepackage{subcaption}
+
+% =========================
+% DRAWING
+% =========================
+\usepackage{tikz}
+
+% =========================
+% HEADER / FOOTER
+% =========================
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
@@ -77,42 +71,21 @@
 \fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \setlength{\headheight}{14.5pt}
-\renewcommand{\footrulewidth}{0pt}
-\usepackage{lscape}   
-\usepackage{wrapfig} 
-\usepackage{longtable}   
-\usepackage{adjustbox}
-\usepackage{subcaption} 
-\usepackage{graphicx} 
-\usepackage{tikz}
-\usepackage{xcolor}
+
+% =========================
+% LINKS
+% =========================
 \usepackage{url}
-\usepackage{cite}
 \usepackage[
     colorlinks=true,
     citecolor=blue,
     linkcolor=blue,
     urlcolor=blue
 ]{hyperref}
-% =====================================================
-%                DOCUMENT START
-% =====================================================
-% Define clearer Algeria blue
-\definecolor{algeriablue}{RGB}{0, 114, 198}
-\definecolor{lightblue}{RGB}{225, 238, 252}
 
-% Page margins
-\geometry{top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
-
-% Remove page number on cover
-\pagenumbering{gobble}
-
-
-
-
-% Ensure text doesn't go out of frame
-\usepackage{ragged2e}
-
+% =========================
+% DOCUMENT START
+% =========================
 \begin{document}
 
 \begin{titlepage}
@@ -133,7 +106,7 @@
 \begin{center}
 \begin{minipage}[c]{0.15\textwidth}
     \centering
-    \includegraphics[width=2cm]{logo1.jpg}
+    \includegraphics[width=2cm]{figures/_first_page/logo1.jpg}
 \end{minipage}
 \hfill
 \begin{minipage}[c]{0.65\textwidth}
@@ -145,7 +118,7 @@
 \hfill
 \begin{minipage}[c]{0.15\textwidth}
     \centering
-    \includegraphics[width=2cm]{logo1.jpg}
+    \includegraphics[width=2cm]{figures/_first_page/logo1.jpg}
 \end{minipage}
 \end{center}
 
@@ -238,15 +211,35 @@
 \chapter*{Dedication nour}
 \chapter*{Dedication prof}
 \chapter*{Summary}
-\section{Summary}
-This project involves the design and development of a mobile application called Allo Artisan, aimed at connecting clients with artisans in Algeria. Following an analysis of existing solutions and their limitations, we proposed a solution built around three main axes: trust, functionality, and accessibility. The application provides key features such as QR code identity verification, diploma validation, a multi-criteria search system, an availability calendar, a post and notification mechanism for service requests. Technically, the application was developed using Flutter for the mobile interface, Go (Golang) for the backend, and PostgreSQL as the database management system, deployed via Docker.
-Keywords : Mobile application, client-artisan connection, Flutter, Go, PostgreSQL
+\addcontentsline{toc}{chapter}{Summary}
 
- \section{ملخص} 
- Allo Artisan يتمحور هذا المشروع حول تصميم وتطوير تطبيق هاتف يحمل اسم يهدف إلى تسهيل التواصل بين الزبائن والحرفيين في الجزائر. بعد تحليل التطبيقات الموجودة في نفس المجال ونقاط ضعفها، اقترحنا حلاً مبنياً على ثلاثة محاور رئيسية هي: الثقة، الوظائف، .
-يوفر التطبيق مجموعة من الميزات الأساسية أبرزها: التحقق من هوية الحرفي عن طريق رمز الاستجابة السريعة، والتحقق من الشهادات والوثائق المهنية، ونظام بحث متعدد المعايير، وتقويم لعرض أوقات التوفر، إضافةً إلى نظام منشورات وإشعارات خاصة بطلبات الخدمة العاجلة والعادية.أما على الصعيد التقني، فقد تم تطوير التطبيق باستخدام Flutter لتصميم الواجهات، وGo (Golang) لتطوير الخادم وبناء واجهة برمجية من نوع REST، وPostgreSQL كنظام لإدارة قواعد البيانات، مع اعتماد Docker لضمان نشر مستقر ومحمول.
-الكلمات المفتاحية : تطبيق جوال، ربط الزبائن بالحرفيين، بحث متعدد المعايير، Flutter، Go، PostgreSQL.
+\section*{Summary}
 
+This project involves the design and development of a mobile application called Allo Artisan, aimed at connecting clients with artisans in Algeria. Following an analysis of existing solutions and their limitations, we proposed a solution built around three main axes: trust, functionality, and accessibility.
+
+The application provides key features such as QR code identity verification, diploma validation, a multi-criteria search system, an availability calendar, and a post and notification mechanism for service requests.
+
+Technically, the application was developed using Flutter for the mobile interface, Go (Golang) for the backend, and PostgreSQL as the database management system, deployed via Docker.
+
+\textbf{Keywords:} Mobile application, client-artisan connection, Flutter, Go, PostgreSQL.
+
+\vspace{1cm}
+
+% =========================
+% ===== Résumé (section arabe → français) =====
+\section*{Résumé}
+\addcontentsline{toc}{chapter}{Résumé}
+
+\noindent
+Ce projet porte sur la conception et le développement d’une application mobile appelée « Allo Artisan », visant à faciliter la mise en relation entre les clients et les artisans en Algérie.
+
+Après une analyse des applications existantes dans le même domaine ainsi que de leurs limites, nous avons proposé une solution basée sur trois axes principaux : la confiance, les fonctionnalités et la facilité d’utilisation.
+
+L’application fournit un ensemble de fonctionnalités essentielles, notamment : la vérification de l’identité de l’artisan via un code QR, la validation des diplômes et documents professionnels, un système de recherche multicritère, un calendrier de disponibilité, ainsi qu’un système de publications et de notifications pour les demandes de service urgentes et ordinaires.
+
+Sur le plan technique, l’application a été développée en utilisant Flutter pour l’interface mobile, Go (Golang) pour le développement du backend et la création d’une API REST, ainsi que PostgreSQL comme système de gestion de base de données, avec l’utilisation de Docker afin d’assurer un déploiement stable et portable.
+
+\textbf{Mots-clés :} application mobile, mise en relation clients-artisans, Flutter, Go, PostgreSQL.
 % ======================
 % Table of Contents
 % ======================
@@ -307,7 +300,7 @@ To better understand the current state of existing solutions, we will analyze a 
 \textit{\textbf{Khedamni}} is a mobile application available on the Google Play Store, with over 10,000 downloads and a rating of 4.4 stars based on 207 reviews.
 
 \begin{center}
-    \includegraphics[width=2.5cm]{khedmni .png} 
+    \includegraphics[width=2.5cm]{figures/_first_page/khedmni .png} 
     \par
     \textbf{Khedamni Logo}
 \end{center}
@@ -338,7 +331,7 @@ To better understand the current state of existing solutions, we will analyze a 
 \textit{\textbf{De9de9 }}is a mobile and web application available on the Google Play Store, with over 50,000 downloads and a rating of 4.1 stars based on 120 reviews.
 
 \begin{center}
-    \includegraphics[width=2.5cm]{d9d9.png} 
+    \includegraphics[width=2.5cm]{figures/_first_page/d9d9.png} 
     \par
     \textbf{De9de9 Logo}
 \end{center}
@@ -365,7 +358,7 @@ To better understand the current state of existing solutions, we will analyze a 
 \textit{\textbf{Afriha}} is a mobile and web application available on the Google Play Store, with over 10,000 downloads and a rating of 4.0 stars based on 24 reviews.
 
 \begin{center}
-    \includegraphics[width=2.5cm]{afriha.png} 
+    \includegraphics[width=2.5cm]{figures/_first_page/afriha.png} 
     \par
     \textbf{Afriha Logo}
 \end{center}
@@ -427,15 +420,12 @@ This section presents the main design directions of the proposed application, wh
     \item[$\bullet$] Only \textbf{active artisans} are displayed in search results to improve efficiency.
     \item[$\bullet$] The interface is designed to be \textbf{simple, clear, and intuitive}, suitable for users of all technical levels.
 \end{itemize}
-%\begin{center}
- %   \includegraphics[width=0.6\textwidth]{pillars_final.png}
-%\end{center}
-%\begin{figure}[H]
-    %\centering
-    %\includegraphics[width=0.8\textwidth]{photo_2026-05-18_22-23-55.jpg}
-    %\caption{What is our application based on?} 
-     % \label{fig:What is our application based on?}
-%\end{figure} 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.98\textwidth]{figures/_first_page/chapter_picture}
+    \caption{a service-based application}
+    \label{fig:a service-based application}
+\end{figure}
 \section{Conclusion}
 
 In this chapter, we conducted a \textbf{comprehensive study} of existing applications by analyzing their \textbf{strengths and weaknesses} from the users’ perspective. This evaluation enabled us to identify \textbf{relevant improvements} and \textbf{innovative solutions} that will be integrated into our application in order to enhance its \textbf{performance}, \textbf{usability}, and \textbf{competitiveness} in the market. 
@@ -514,7 +504,7 @@ The following figure \ref{fig:use-case-diagram} illustrates the use case diagram
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.98\textwidth]{use case 7.drawio.png}
+    \includegraphics[width=0.98\textwidth]{figures/_first_page/use case 7.drawio.png}
     \caption{Use Case Diagram}
     \label{fig:use-case-diagram}
 \end{figure}
@@ -528,7 +518,7 @@ In this part, we will present the sequence diagrams along with their textual des
 The following figure(figure:\ref{fig:register account _ artisan})represents the sequence diagram of the <<Register an Artisan account>> use case: 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.98\textwidth]{sequance-client_request_service.drawio.png}
+    \includegraphics[width=0.98\textwidth]{figures/_first_page/sequance-client_request_service.drawio.png}
     \caption{sequence diagram of the <<register an artisan account>> use case}
     \label{fig:register account _ artisan}
 \end{figure}
@@ -572,7 +562,7 @@ Alternative Scenario & \textbf{A1: If the email already exists.} \newline
 The following figure (figure:\ref{fig:authentication sequence diagram}) represents the sequence diagram of the “Authentication” use case 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.98\textwidth]{sequance-auth.drawio (1).png}
+    \includegraphics[width=0.98\textwidth]{figures/_first_page/sequance-auth.drawio (1).png}
     \caption{sequence diagram of `Authentication` use case}
     \label{fig:authentication sequence diagram}
 \end{figure}
@@ -614,7 +604,7 @@ Alternative Scenario & \textbf{A1: Invalid credentials.} \newline
 The following figure (Figure\ref{fig:request service}) represents the sequence diagram of the<<Schedule an appointment>>use case  
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.98\textwidth]{sequance-create_account_artisan.drawio (1).png}
+    \includegraphics[width=0.98\textwidth]{figures/_first_page/sequance-create_account_artisan.drawio (1).png}
     \caption{Schedule an appointment sequence diagram}
     \label{fig:request service}
 \end{figure}
@@ -729,7 +719,7 @@ The activity diagram must represent all the actions performed by the system, inc
  The following figure (Figure\ref{fig:Activity Diagram}) represents the Activity Diagram of the System : 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.98\textwidth]{activity.drawio.png}
+    \includegraphics[width=0.98\textwidth]{figures/_first_page/activity.drawio.png}
     \caption{Activity diagram}
     \label{fig:Activity Diagram}
 \end{figure}
@@ -856,7 +846,7 @@ The following figure(Figure\ref{fig:class-diagram} )illustrates the class diagra
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{class diagram1.jpg}
+    \includegraphics[width=0.9\textwidth]{figures/_first_page/class diagram1.jpg}
     \caption{Class Diagram}
       \label{fig:class-diagram}
 \end{figure} 
@@ -931,7 +921,7 @@ An open-source programming language supported by Google, Easy to learn and great
 \hfill
     \begin{minipage}[c]{0.3\textwidth}
     \centering
-    \includegraphics[width=2.5cm]{go langage.png}
+    \includegraphics[width=2.5cm]{figures/_first_page/go langage.png}
     \captionof{figure}{Logo of Go language}
     \label{fig:Go language}
 \end{minipage}
@@ -943,7 +933,7 @@ Flutter is an open-source framework a Google based on the Dart language, allowin
 \hfill
 \begin{minipage}[c]{0.3\textwidth}
     \centering
-    \includegraphics[width=2.5cm]{Flutter.png}
+    \includegraphics[width=2.5cm]{figures/_first_page/Flutter.png}
     \captionof{figure}{Logo of Flutter}
     \label{fig:Flutter}
 \end{minipage}
@@ -959,7 +949,7 @@ A standalone source code editor that runs on Windows, macOS, and Linux, Mainly u
 \hfill
 \begin{minipage}[c]{0.3\textwidth}
     \centering
-    \includegraphics[width=2.5cm]{vs code.jpg}
+    \includegraphics[width=2.5cm]{figures/_first_page/vs code.jpg}
     \captionof{figure}{Logo of Visual studio }
     \label{fig:Vs code}
 \end{minipage}
@@ -973,7 +963,7 @@ The official IDE for Android application development, The emulation and testing 
 \hfill
 \begin{minipage}[c]{0.3\textwidth}
     \centering
-    \includegraphics[width=2.5cm]{Android studio.png}
+    \includegraphics[width=2.5cm]{figures/_first_page/Android studio.png}
     \captionof{figure}{Logo of Android Studio }
     \label{fig:Andoid Studio}
 \end{minipage}
@@ -987,7 +977,7 @@ A containerization tool that allows the backend and its dependencies to be packa
 \hfill
 \begin{minipage}[c]{0.3\textwidth}
     \centering
-    \includegraphics[width=2.5cm]{doker.png}
+    \includegraphics[width=2.5cm]{figures/_first_page/doker.png}
     \captionof{figure}{Logo of docker }
     \label{fig:docker}
     \end{minipage}
@@ -1001,7 +991,7 @@ PostgreSQL is a powerful, open source object-relational database system, it was 
 \hfill
 \begin{minipage}[c]{0.3\textwidth}
     \centering
-    \includegraphics[width=2.5cm]{postgresql.jpg}
+    \includegraphics[width=2.5cm]{figures/_first_page/postgresql.jpg}
     \captionof{figure}{Logo of PostgreSQL }
     \label{fig:PostgreSQL}
 \end{minipage}
@@ -1013,7 +1003,7 @@ The following figure \ref{fig:deployment digram} presented the class diagram of 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{deployment diagram.jpg}
+    \includegraphics[width=0.9\textwidth]{figures/_first_page/deployment diagram.jpg}
     \caption{Deployment Diagram} 
       \label{fig:deployment digram}
 \end{figure} 
@@ -1071,11 +1061,12 @@ Go REST API Server & PostgreSQL DB & SQL Queries & Execution of CRUD operations 
  In this part, we will present our application: <<\textbf{Allo Artisan}>> 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.4\textwidth]{logo.jpg}
+    \includegraphics[width=0.4\textwidth]{figures/_first_page/logo.jpg}
     \caption{logo of the application} 
       \label{fig:logo}
 \end{figure}
 \textbf{Allo Artisan} is a \textbf{mobile application }developed with the aim of facilitating the connection between clients looking for services and artisans offering their skills in various fields.
+
 \section{Application Interface}
 In this part, we will present the interfaces of our application:
 \subsubsection{Login Interface}
@@ -1086,7 +1077,7 @@ This interface is the \textbf{first page displayed} to the user when launching t
 \hfill
 \begin{minipage}[c]{0.38\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{login_screen.png}
+    \includegraphics[width=\linewidth]{figures/_first_page/login_screen.png}
     \captionof{figure}{Login Interface}
     \label{fig:login}
 \end{minipage}
@@ -1109,17 +1100,17 @@ The figure above(Figure\ref{fig:create-artisan}) presents the artisan account cr
 \begin{figure}[h]
     \centering
     \begin{subfigure}[c]{0.3\textwidth}
-        \includegraphics[width=\textwidth]{register_step1.png}
+        \includegraphics[width=\textwidth]{figures/_first_page/register_step1.png}
         \caption{Step 1}
     \end{subfigure}
     \hfill
     \begin{subfigure}[c]{0.3\textwidth}
-        \includegraphics[width=\textwidth]{register_step2.png}
+        \includegraphics[width=\textwidth]{figures/_first_page/register_step2.png}
         \caption{Step 2}
     \end{subfigure}
     \hfill
     \begin{subfigure}[c]{0.3\textwidth}
-        \includegraphics[width=\textwidth]{register_step3.png}
+        \includegraphics[width=\textwidth]{figures/_first_page/register_step3.png}
         \caption{Step 3}
     \end{subfigure}
     \caption{Create Artisan Account Interface}
@@ -1140,7 +1131,7 @@ A “+ Share a Request” button allows the client to publish a new service requ
 \hfill
 \begin{minipage}[c]{0.38\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{home_screen_client.png}
+    \includegraphics[width=\linewidth]{figures/_first_page/home_screen_client.png}
     \captionof{figure}{Home Page Interface}
     \label{fig:home}
 \end{minipage}
@@ -1165,13 +1156,13 @@ In both cases, a \textbf{"Send"} button allows the client to submit the request,
     \centering
     \begin{minipage}[c]{0.45\textwidth}
         \centering
-        \includegraphics[width=\linewidth]{demand_normal.png}
+        \includegraphics[width=\linewidth]{figures/_first_page/demand_normal.png}
         \caption{Normal Request}
     \end{minipage}
     \hfill
     \begin{minipage}[c]{0.45\textwidth}
         \centering
-        \includegraphics[width=\linewidth]{demand_urgent.png}
+        \includegraphics[width=\linewidth]{figures/_first_page/demand_urgent.png}
         \caption{Urgent Request}
     \end{minipage}
     \caption{Service Request Sharing Interface}
@@ -1184,7 +1175,7 @@ In both cases, a \textbf{"Send"} button allows the client to submit the request,
 \hfill
 \begin{minipage}[c]{0.38\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{search.png}
+    \includegraphics[width=\linewidth]{figures/_first_page/search.png}
     \captionof{figure}{Search for an artisan Interface}
     \label{fig:Search}
 \end{minipage}
@@ -1192,59 +1183,78 @@ In both cases, a \textbf{"Send"} button allows the client to submit the request,
 \subsubsection{Profile Artisan Interface}
 The figure above represents the profile interface of the Allo Artisan application on the artisan side, available in two views :
 
-\textbf{Private View (accessible by the artisan) :} 
+\vspace{8pt}
+\textbf{Private View (accessible by the artisan) :}
 The artisan can consult and manage his complete profile. Displays his name, job category, rating, and email address. It also offers:
-\newline
-$\bullet$ A "QR Code" button to generate his personal QR code \newline
-$\bullet$ A "Settings" button to modify his information \newline
-$\bullet$ A visibility status that can be toggled to appear or not to clients \newline
-$\bullet$ Management of his availabilities via a calendar \newline
-$\bullet$ The list of his subscribers \newline
-$\bullet$ A"Create a publication"section to share his work with a photo 
+
+\vspace{6pt}
+\begin{itemize}[leftmargin=0.5cm, nolistsep]
+    \item A "QR Code" button to generate his personal QR code
+    \item A "Settings" button to modify his information
+    \item A visibility status that can be toggled to appear or not to clients
+    \item Management of his availabilities via a calendar
+    \item The list of his subscribers
+    \item A "Create a publication" section to share his work with a photo
+\end{itemize}
+
 \vspace{10pt}
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \begin{subfigure}[c]{0.3\textwidth}
-        \includegraphics[width=\textwidth]{privayte_profile.png}
+        \centering
+        \includegraphics[width=\textwidth]{figures/_first_page/privayte_profile.png}
         \caption{Profile 1}
     \end{subfigure}
     \hfill
     \begin{subfigure}[c]{0.3\textwidth}
-        \includegraphics[width=\textwidth]{privat_profile2.png}
+        \centering
+        \includegraphics[width=\textwidth]{figures/_first_page/privat_profile2.png}
         \caption{Profile 2}
     \end{subfigure}
     \hfill
     \begin{subfigure}[c]{0.3\textwidth}
-        \includegraphics[width=\textwidth]{private_profile3.png}
+        \centering
+        \includegraphics[width=\textwidth]{figures/_first_page/private_profile3.png}
         \caption{Profile 3}
     \end{subfigure}
-    \caption{Artisan Profile Interface}
-    \label{fig:artisan_Private Profile}
+    \caption{Artisan Private Profile Interface}
+    \label{fig:artisan_private_profile}
 \end{figure}
+
+\vspace{10pt}
+
 \textbf{Public View (visible to clients):}
-Clients can view the artisan’s public profile, which displays their name, category, rating, and email address. Two action buttons are available — “Follow” and “Message” — allowing the client to follow the artisan or contact them directly. It also presents:
+Clients can view the artisan's public profile, which displays their name, category, rating, and email address. Two action buttons are available — "Follow" and "Message" — allowing the client to follow the artisan or contact them directly. It also presents:
 
-Their personal QR code,
-Their visibility status,
-Their availability, including working days and hours,
-the list of their followers,
-and their published work posts that showcase completed services.
- \vspace{10pt}
+\vspace{6pt}
+\begin{itemize}[leftmargin=0.5cm, nolistsep]
+    \item Their personal QR code
+    \item Their visibility status
+    \item Their availability, including working days and hours
+    \item The list of their followers
+    \item Their published work posts that showcase completed services
+\end{itemize}
 
-%\begin{figure}[h]
- %\begin{subfigure}[c]{0.3\textwidth}
-  %      \includegraphics[width=\textwidth]%{artisan_public_profil2.png}
-  %      \caption{Profile}
-   % \end{subfigure}
-   % \hfill
-    %\begin{subfigure}[c]{0.3\textwidth}
-   %     \includegraphics[width=\textwidth]%{artisan_public_profil2.png}
-   %     \caption{Public profile }
-   % \end{subfigure}
-    %\caption{Artisan Public Profile Interface}
-    %\label{fig:artisan_Public Profile}
-%\end{figure}
+\vspace{10pt}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[c]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/_first_page/artisan_public_profile.png}
+        \caption{Public profile 1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[c]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/_first_page/artisan_public_profil2.png}
+        \caption{Public profile 2}
+    \end{subfigure}
+    \caption{Artisan Public Profile Interface}
+    \label{fig:artisan_public_profile}
+\end{figure}
+% ===================== CONCLUSION =====================
 \section{Conclusion}
 This chapter presents the implementation phase of our Allo Artisan application. We described the tools and technologies used during the development process,then illustrated the different interfaces of the application intended for both the client and the artisan. This chapter therefore concludes our project by translating all the previous stages into a concrete and functional mobile application
 \chapter*{General Conclusion}
