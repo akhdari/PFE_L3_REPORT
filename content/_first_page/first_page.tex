@@ -89,66 +89,54 @@
 \begin{document}
 
 \begin{titlepage}
+
+% ===== CADRE EXTERIEUR =====
 \begin{tikzpicture}[remember picture, overlay]
-    % Cadre extérieur bleu
-    \draw[blue!60, line width=3pt] 
-        ([xshift=0.5cm, yshift=-0.5cm]current page.north west) 
+    \draw[black, line width=2pt] 
+        ([xshift=0.8cm, yshift=-0.8cm]current page.north west) 
         rectangle 
-        ([xshift=-0.5cm, yshift=0.5cm]current page.south east);
-    % Cadre intérieur bleu
-    \draw[blue!40, line width=1pt] 
-        ([xshift=0.7cm, yshift=-0.7cm]current page.north west) 
+        ([xshift=-0.8cm, yshift=0.8cm]current page.south east);
+    \draw[black, line width=0.5pt] 
+        ([xshift=1cm, yshift=-1cm]current page.north west) 
         rectangle 
-        ([xshift=-0.7cm, yshift=0.7cm]current page.south east);
+        ([xshift=-1cm, yshift=1cm]current page.south east);
 \end{tikzpicture}
 
 % ===== EN-TETE =====
 \begin{center}
-\begin{minipage}[c]{0.15\textwidth}
-    \centering
-    \includegraphics[width=2cm]{figures/_first_page/logo1.jpg}
-\end{minipage}
-\hfill
-\begin{minipage}[c]{0.65\textwidth}
-    \centering
-    \textbf{people's Democratic Republic of Algeria} \\[4pt]
-    \textbf{Ministry of Higher Education and Scientific Research} \\[4pt]
-    \textbf{M'Hamed Bougara University - Boumerdes}
-\end{minipage}
-\hfill
-\begin{minipage}[c]{0.15\textwidth}
-    \centering
-    \includegraphics[width=2cm]{figures/_first_page/logo1.jpg}
-\end{minipage}
-\end{center}
-
-\vspace{0.5cm}
-\begin{center}
-    {\large \textcolor{blue}{\underline{\textbf{Faculty of Sciences}}}} \\[8pt]
-    {\normalsize \underline{Department of Computer Science}}
+    \textbf{people's Democratic Republic of Algeria} \\[6pt]
+    \textbf{Ministry of Higher Education and Scientific Research} \\[6pt]
+    \textbf{M'Hamed Bougara University - Boumerdes} \\[6pt]
+    \textbf{Faculty of Sciences} \\[10pt]
+    \includegraphics[width=3cm]{figures/_first_page/logo1.jpg} \\[10pt]
+    \textbf{Department of Computer Science}
 \end{center}
 
 \vspace{0.8cm}
 
-% ===== DOMAINE FILIERE SPECIALITE =====
-\begin{flushleft}
+% ===== FINAL YEAR PROJECT + DOMAIN =====
+\begin{minipage}[t]{0.48\textwidth}
+    \textbf{Final Year Project for the Award of Bachelor's Degree}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
     \textbf{\underline{Domain:}} Mathematics and Computer Science \\[6pt]
     \textbf{\underline{Field:}} Computer Science \\[6pt]
-    \textbf{\underline{Specialty:}} Information Systems
-\end{flushleft}
+    \textbf{\underline{Specialty}}: Information Systems
+\end{minipage}
 
 \vspace{1cm}
 
 % ===== TITRE =====
 \begin{center}
 \begin{tikzpicture}
-    \draw[blue!60, line width=2pt, rounded corners=10pt] 
-        (0,0) rectangle (\textwidth, 3cm);
-    \node at (0.5\textwidth, 1.5cm) {
+    \draw[blue!50, line width=1.5pt, rounded corners=15pt] 
+        (0,0) rectangle (\textwidth, 4cm);
+    \node at (0.5\textwidth, 2cm) {
         \begin{minipage}{0.9\textwidth}
             \centering
-            {\Large \textbf{\textcolor{blue}{Development of a Mobile Application for}}} \\[10pt]
-            {\Large \textbf{\textcolor{blue}{Client--Artisan Connection}}}
+            {\LARGE \textbf{Development of a Mobile Application}} \\[10pt]
+            {\LARGE \textbf{for Client--Artisan Connection}}
         \end{minipage}
     };
 \end{tikzpicture}
@@ -158,62 +146,246 @@
 
 % ===== PRESENTED BY ET SUPERVISOR =====
 \begin{minipage}[t]{0.45\textwidth}
-\begin{tikzpicture}
-    \draw[blue!40, line width=1pt, rounded corners=5pt] 
-        (0,0) rectangle (7cm, 4.5cm);
-    \node[anchor=north west] at (0.2cm, 4.3cm) {
-        \begin{minipage}{6.5cm}
-            \textbf{\underline{Presented by:}} \\[8pt]
-            \hspace{0.5cm} Ms. Ikram Taftist \\[6pt]
-            \hspace{0.5cm} Ms. Meriem Chennouf \\[6pt]
-            \hspace{0.5cm} Ms. Nour El Houda Akhdari \\[6pt]
-            \hspace{0.5cm} Ms. Sofia Oubaziz
-        \end{minipage}
-    };
-\end{tikzpicture}
+    \textbf{\underline{Presented by:}} \\[10pt]
+    \textbf{Ms. Ikram Taftist} \\[8pt]
+    \textbf{Ms. Meriem Chennouf} \\[8pt]
+    \textbf{Ms. Nour El Houda Akhdari} \\[8pt]
+    \textbf{Ms. Sofia Oubaziz}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.45\textwidth}
-\begin{tikzpicture}
-    \draw[blue!40, line width=1pt, rounded corners=5pt] 
-        (0,0) rectangle (7cm, 4.5cm);
-    \node[anchor=north west] at (0.2cm, 4.3cm) {
-        \begin{minipage}{6.5cm}
-            \textbf{\underline{Supervisor:}} \\[8pt]
-            \hspace{0.5cm} Ms. Samiya Hamadouche \\[12pt]
-            \textbf{\underline{Examiner:}} \\[8pt]
-            \hspace{0.5cm} Mr. Nouasri Amine
-        \end{minipage}
-    };
-\end{tikzpicture}
+    \textbf{\underline{Supervisor:}} \\[8pt]
+    \textbf{Ms. Samiya Hamadouche} \\[12pt]
+    \textbf{\underline{Examiner :}} \\[8pt]
+    \textbf{Mr. Nouasri Amine} \\[12pt]
+    \textbf{\underline{Defended on}} : \\[6pt]
+    26/05/2026
 \end{minipage}
 
-\vspace{1.2cm}
+\vspace{\fill}
 
-% ===== DEFENDED ON =====
+% ===== ANNEE ACADEMIQUE =====
 \begin{center}
-    \textbf{\underline{Defended on}} : 26/05/2026
+    \textbf{Academic Year: 2025/2026}
+\end{center}
+
+\end{titlepage}
+
+\clearpage
+\thispagestyle{empty}
+\null
+\newpage
+
+\pagenumbering{roman}
+% ===== DEDICATION 1 - Meriem =====
+\newpage
+\thispagestyle{fancy}
+\begin{center}
+    {\Large \textbf{Dedication}}
+\end{center}
+
+\vspace{0.5cm}
+
+\begin{center}
+    \textit{بسم الله الرحمن الرحيم}
+\end{center}
+
+\vspace{0.5cm}
+
+Tout d'abord, je tiens à remercier Dieu de m'avoir donné la force et le courage d'accomplir ce modeste travail.
+
+\vspace{0.5cm}
+
+Je dédie ce travail :
+
+\vspace{0.3cm}
+
+\textbf{À la petite fille que j'étais autrefois}
+
+Tu es aimée, tu es entendue, tu es vue. Je suis devenue ce refuge sûr que tu espérais, cette force tranquille que tu cherchais dans les tempêtes. Aujourd'hui, je te rends hommage avec tendresse et fierté, car je suis fière de la femme que je suis devenue, fière du chemin parcouru, des peurs affrontées et des rêves réalisés. Et surtout, je suis enfin heureuse.
+
+\begin{center}
+    \textit{Ce projet est pour toi}
+\end{center}
+
+\vspace{0.3cm}
+
+\textbf{À ma très chère mère}
+
+Ce pilier de ma vie, cette femme au cœur immense dont l'amour inconditionnel et les prières silencieuses m'ont porté dans les moments les plus difficiles. Aucune dédicace, aucun mot, aucune phrase ne pourrait exprimer l'amour, la reconnaissance et le respect que j'ai pour toi. Tu es et tu resteras ma plus belle lumière.
+
+\vspace{0.3cm}
+
+\textbf{À mon cher père}
+
+Cet homme de dignité et de sagesse, qui s'est sacrifié sans compter pour que je puisse atteindre mes rêves. Tu m'as appris que la persévérance est la clé de tout succès. Ta fierté est ma plus belle récompense et ton soutien mon plus grand trésor.
+
+\vspace{0.3cm}
+
+\textbf{À ma chère sœur Bouchra}
+
+Ma confidente, ma douceur et ma complice de toujours. Merci pour ta présence, ton soutien sincère et ton amour fraternel qui m'ont accompagné tout au long de ce chemin.
+
+\vspace{0.3cm}
+
+\textbf{À mon cher frère Azzedine}
+
+Mon ami, mon pilier et mon confident. Merci pour chaque mot d'encouragement, chaque geste de soutien et chaque moment partagé qui ont rendu ce voyage plus léger.
+
+\vspace{0.3cm}
+
+\textbf{À mes chers amis}
+
+Vous qui avez partagé avec moi les rires et les larmes, les doutes et les victoires. Votre amitié sincère a été un véritable cadeau sur ce parcours. Merci d'avoir toujours cru en moi.
+
+
+\newpage
+\thispagestyle{fancy}
+
+\begin{center}
+    {\Large \textbf{Dedication}}
+\end{center}
+
+\vspace{0.5cm}
+
+\begin{center}
+    {\Large \textbf{بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيم}}
+\end{center}
+
+\vspace{0.5cm}
+
+{\arabicfont
+\begin{RTL}
+
+الحمدُ لله الذي بنعمته تتمّ الصالحات، أحمده سبحانه حمدًا كثيرًا طيبًا مباركًا فيه، فقد منَّ عليَّ بإتمام مشوارٍ جامعيٍّ جديد تُوِّج بنيل شهادة الليسانس، فله الحمد أولًا وآخرًا على ما وفّق ويسّر. وأسأله عزّ وجلّ أن يرزقني علمًا نافعًا أُفيد به غيري، وأن يجعل ما تعلمناه وعملنا به في ميزان حسناتنا.
+
+\vspace{0.4cm}
+
+أتقدّم بخالص الشكر والامتنان إلى كلّ من كان سندًا لي وداعمًا خلال هذه السنوات الثلاث، وعلى رأسهم والداي العزيزان، اللذان كانا نعم العون والسند.
+
+\vspace{0.3cm}
+
+\textbf{شكراً أبي، شكراً أمي،} على كلّ ما بذلتماه من تعبٍ وصبرٍ ودعاء، وعلى دعمكما المتواصل الذي كان يدفعني للاستمرار وتجاوز كلّ الصعوبات، فجزاكما الله عنّي خير الجزاء وبارك في عمركما.
+
+\vspace{0.4cm}
+
+كما أتوجّه بالشكر إلى إخوتي وأختي الأعزاء، الذين كانوا مصدرًا للطمأنينة والابتسامة رغم التعب والمشقة، وإلى أخي الصغير الذي كان خير أنيسٍ ورفيقٍ لي في طريق العودة، دون كللٍ أو تذمّر، أسأل الله أن يرزقه من واسع فضله ويوفّقه لما يحب ويرضى.
+
+\vspace{0.4cm}
+
+ولا يفوتني أن أتقدّم بجزيل الشكر إلى أساتذتي الكرام، وكلّ من علّمني حرفًا أو قدّم لي علمًا أو نصيحة. كما أخصّ بالشكر الأساتذة المتفهّمين أصحاب الأخلاق الرفيعة، الذين جعلوا من طلب العلم متعةً وشغفًا لا ينطفئ.
+
+\vspace{0.4cm}
+
+وأشكر صديقاتي ورفيقات دربي، اللواتي كنّ خير سندٍ ورفقة طوال سنوات الدراسة، فقد خفّفن عنّي ضغوط الأيام الصعبة، وشاركني لحظات التعب والنجاح، فكانت الجامعة أجمل بوجودهن. أسأل الله أن يحفظكن ويوفّقكن في مستقبلكن العلمي والمهني.
+
+\vspace{0.4cm}
+
+وفي الختام، نحمد الله حمدًا كثيرًا على إتمام هذا المشروع الذي قدّمناه أنا وزميلاتي بكلّ إخلاصٍ واجتهاد، ووضعنا فيه جزءًا من جهدنا ووقتنا وطموحنا. نسأل اللهم أن تجعله علمًا نافعًا وسببًا للخير والمنفعة، وأن تبارك لنا فيما تعلمنا، وتزيدنا علمًا وتوفيقًا، إنّك وليّ ذلك والقادر عليه.
+
+\end{RTL}
+}
+% ===== DEDICATION 2 - Sofia =====
+\newpage
+\thispagestyle{fancy}
+\begin{center}
+    {\Large \textbf{Dedication}}
+\end{center}
+
+\vspace{0.5cm}
+
+Je dédie ce travail de fin d'études à toutes les personnes qui ont occupé une place importante dans ma vie et qui m'ont accompagnée, de près ou de loin, durant ce long parcours rempli d'efforts, de doutes, de sacrifices et d'espoir.
+
+\vspace{0.3cm}
+
+\textbf{À ma famille}, pour votre amour inconditionnel, votre patience, vos encouragements et votre présence dans les moments les plus difficiles. Merci d'avoir toujours cru en moi même lorsque moi-même je doutais. Votre soutien a été ma plus grande force. Une pensée toute particulière à mon frère \textbf{Idir} et ma sœur \textbf{Katia}, pour votre présence, vos conseils, votre soutien moral et tous ces petits gestes qui ont compté plus que vous ne l'imaginez. Vous avez été une source de motivation et de réconfort tout au long de cette aventure. Savoir que je pouvais compter sur vous m'a aidée à avancer malgré la fatigue, le stress et les périodes compliquées.
+
+\vspace{0.3cm}
+
+\textbf{À mes amis(es)}, merci pour les moments de rire, les discussions, l'entraide, les encouragements et la présence sincère durant les périodes de pression. Vous avez rendu ce parcours plus léger et plus beau.
+
+\vspace{0.3cm}
+
+\textbf{À mon groupe de PFE}, merci pour les efforts partagés, la patience, les idées, les difficultés traversées ensemble et tous les moments vécus durant ce projet. Ce travail représente aussi une aventure humaine faite de collaboration, de persévérance et d'apprentissage.
+
+\vspace{0.3cm}
+
+\textbf{À mes grands-parents}, paix à leurs âmes, même si vous n'êtes plus parmi nous aujourd'hui, votre amour, vos valeurs et vos prières continuent de m'accompagner chaque jour. J'aurais aimé que vous soyez présents pour voir ce moment si important de ma vie. Cette réussite vous est dédiée avec beaucoup d'amour et d'émotion.
+
+\vspace{0.3cm}
+
+Et enfin… je me dédie aussi ce travail \textbf{à moi-même}. À cette version de moi qui a continué malgré le stress, les nuits difficiles, la pression, les moments de découragement et la peur de ne pas y arriver. À toutes les fois où j'ai dû être forte, persévérer et me relever seule. Le chemin n'a pas été facile, mais je suis restée debout jusqu'au bout.
+
+\vspace{0.3cm}
+
+Aujourd'hui, je suis fière de moi, fière du chemin parcouru, fière de ne pas avoir abandonné malgré toutes les difficultés. Ce mémoire représente bien plus qu'un projet académique : il représente une preuve de ma détermination, de ma patience et de ma capacité à avancer même dans les moments compliqués.
+
+\vspace{0.3cm}
+
+Que ce travail soit le début d'un avenir rempli de réussite, de bonheur et de nouvelles ambitions.
+% ===== DEDICATION 3 - Nour =====
+\newpage
+\thispagestyle{fancy}
+
+\begin{center}
+    {\Large \textbf{Dedication}}
+\end{center}
+
+\vspace{0.5cm}
+
+To my parents, thank you for your unwavering presence throughout my journey. I am deeply grateful for all the sacrifices you have made for me.
+
+\vspace{0.3cm}
+
+To my grandparents, whose home was always open to me and became the place where I spent much of my life, thank you for raising me with love, care, and guidance.
+
+\vspace{0.3cm}
+
+Particulièrement à ma grand-mère, qui n’a pas eu la chance de terminer ses études, mais qui a toujours profondément cru en la valeur de l’éducation et a encouragé toutes les femmes autour d’elle, y compris moi, à poursuivre leurs objectifs. J’ai choisi d’écrire cette partie en français afin qu’elle puisse la comprendre. Merci pour ta confiance constante en moi, ton soutien, ainsi que pour la force et la gentillesse qui continuent de m’inspirer.
+
+\vspace{0.3cm}
+
+To my grandfather on my father’s side, although we were not in close contact throughout much of my life, I still carry your memory with me and hold it close to my heart.
+
+\vspace{0.3cm}
+
+To my aunts, thank you for your care, encouragement, and for always making me feel supported throughout the years. You have been like older sisters to me in so many ways.
+
+\vspace{0.3cm}
+
+And especially to my aunt Isma, whose kindness, support, and generosity have meant more to me than words can express. Thank you for always being there for me, believing in me, and caring for me.
+
+\vspace{0.3cm}
+
+And to someone very special to me, thank you for your constant support, encouragement, and for being my companion throughout this journey. Your belief in me, your love, and your companionship have meant more than you know.
+
+\vspace{0.3cm}
+
+This work is dedicated to all of you.
+\newpage
+\thispagestyle{fancy}
+
+\begin{center}
+    {\Large \textbf{Dedication}}
 \end{center}
 
 \vspace{0.8cm}
 
-% ===== LIGNE ET ANNEE =====
-\begin{center}
-    \rule{6cm}{0.4pt} \\[8pt]
-    2025 - 2026
-\end{center}
+\textbf{To our supervisor, Madame Hamadouche Samya}
 
-\end{titlepage}
-\pagenumbering{roman}
-\chapter*{Dedication meriem }
-\chapter*{Dedication ikram}
-\chapter*{Dedication SOFIA }
-\chapter*{Dedication nour}
-\chapter*{Dedication prof}
-\chapter*{Summary}
-\addcontentsline{toc}{chapter}{Summary}
+\vspace{0.3cm}
 
-\section*{Summary}
+We would like to express our sincere gratitude and sincere appreciation for your valuable guidance, patience, and continuous support throughout this project.
+
+Your scientific rigor, insightful advice, and constant availability have been a great source of motivation and have significantly contributed to the success of this work.
+
+Working under your supervision has been both an honor and a privilege. We are truly grateful for your trust, encouragement, and dedication.
+
+\vspace{0.3cm}
+
+Thank you for everything you have done for us.
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
 
 This project involves the design and development of a mobile application called Allo Artisan, aimed at connecting clients with artisans in Algeria. Following an analysis of existing solutions and their limitations, we proposed a solution built around three main axes: trust, functionality, and accessibility.
 
@@ -227,33 +399,42 @@ Technically, the application was developed using Flutter for the mobile interfac
 
 % =========================
 % ===== Résumé (section arabe → français) =====
-\section*{Résumé}
-\addcontentsline{toc}{chapter}{Résumé}
+\section*{الملخص}
+\addcontentsline{toc}{chapter}{الملخص}
+
+{\arabicfont
+\begin{RTL}
 
 \noindent
-Ce projet porte sur la conception et le développement d’une application mobile appelée « Allo Artisan », visant à faciliter la mise en relation entre les clients et les artisans en Algérie.
+يتناول هذا المشروع تصميم وتطوير تطبيق هاتف محمول يُدعى «Allo Artisan»، يهدف إلى تسهيل عملية الربط بين الزبائن والحرفيين في الجزائر.
 
-Après une analyse des applications existantes dans le même domaine ainsi que de leurs limites, nous avons proposé une solution basée sur trois axes principaux : la confiance, les fonctionnalités et la facilité d’utilisation.
+بعد دراسة وتحليل التطبيقات الموجودة في نفس المجال والتعرّف على حدودها ونقاط ضعفها، قمنا باقتراح حل يعتمد على ثلاثة محاور أساسية: الثقة، الوظائف، وسهولة الاستخدام.
 
-L’application fournit un ensemble de fonctionnalités essentielles, notamment : la vérification de l’identité de l’artisan via un code QR, la validation des diplômes et documents professionnels, un système de recherche multicritère, un calendrier de disponibilité, ainsi qu’un système de publications et de notifications pour les demandes de service urgentes et ordinaires.
+يوفّر التطبيق مجموعة من الخصائص الأساسية، من بينها: التحقق من هوية الحرفي باستخدام رمز QR، التحقق من الشهادات والوثائق المهنية، نظام بحث متعدد المعايير، تقويم لتحديد فترات التوفر، بالإضافة إلى نظام للمنشورات والإشعارات الخاصة بطلبات الخدمات العادية والمستعجلة.
 
-Sur le plan technique, l’application a été développée en utilisant Flutter pour l’interface mobile, Go (Golang) pour le développement du backend et la création d’une API REST, ainsi que PostgreSQL comme système de gestion de base de données, avec l’utilisation de Docker afin d’assurer un déploiement stable et portable.
+من الناحية التقنية، تم تطوير التطبيق باستخدام Flutter لتطوير واجهة الهاتف المحمول، وGo (Golang) لتطوير الجزء الخلفي وإنشاء واجهة API REST، إضافةً إلى PostgreSQL كنظام لإدارة قواعد البيانات، مع استخدام Docker لضمان نشر مستقر وقابل للنقل.
 
-\textbf{Mots-clés :} application mobile, mise en relation clients-artisans, Flutter, Go, PostgreSQL.
-% ======================
+\vspace{0.3cm}
+
+\textbf{الكلمات المفتاحية:} تطبيق هاتف محمول، الربط بين الزبائن والحرفيين، Flutter، Go، PostgreSQL.
+
+\end{RTL}
+}
 % Table of Contents
 % ======================
 \tableofcontents
 \newpage
-\addcontentsline{toc}{chapter}{List of Table}
+\addcontentsline{toc}{chapter}{List of Tables}
 \listoftables
 \newpage
+
 \addcontentsline{toc}{chapter}{List of Figures}
-\listoffigures 
+\listoffigures
+\newpage
 \chapter*{General Introduction}
-\thispagestyle{empty}
-\setcounter{page}{0} 
-\addcontentsline{toc}{chapter}{General introduction}
+\addcontentsline{toc}{chapter}{General Introduction}
+\markboth{General Introduction}{General Introduction}
+\thispagestyle{fancy}
 In today's rapidly evolving digital landscape, mobile applications have become essential tools 
 for simplifying everyday tasks and improving access to services. Among the most pressing 
 challenges faced by Algerian households is the difficulty of finding reliable, qualified, and 
@@ -265,15 +446,16 @@ creates a significant gap in the local service ecosystem.
 A review of existing solutions such as Khedamni, De9de9, and Afriha reveals recurring 
 limitations: absence of identity verification, lack of availability management, restricted search 
 options, and insufficient trust mechanisms. These shortcomings motivated us to propose a 
-more robust and user-centered alternative — \textbf{Allo Artisan} — a mobile application designed to 
+more robust and user-centered alternative  \textbf{Allo Artisan}  a mobile application designed to 
 bridge the gap between clients and artisans through a secure, transparent, and intuitive 
 platform built around three core principles: \textbf{trust, functionality, and accessibility}.
 
-This document is structured into three chapters. \textbf{Chapter 1} presents a comparative analysis of 
+This document is structured into three chapters. \newline\textbf{Chapter 1} presents a comparative analysis of 
 existing applications, defines the problem statement, and describes our proposed solution 
-strategy. \textbf{Chapter 2} covers the complete UML modeling of the system, including use case, 
-sequence, class, and activity diagrams. \textbf{Chapter 3} details the implementation phase, 
+strategy. \newline\textbf{Chapter 2} covers the complete UML modeling of the system, including use case, 
+sequence, class, and activity diagrams. \newline\textbf{Chapter 3} details the implementation phase, 
 presenting the tools and technologies used alongside the main interfaces of the application.
+
 % ======================
 % Chapters
 % ======================
@@ -281,7 +463,7 @@ presenting the tools and technologies used alongside the main interfaces of the 
 \pagestyle{fancy}
 \pagenumbering{arabic}
 \setcounter{page}{1}
-\chapter{Existing system analysis}
+\chapter{Existing System Analysis}
 
 \section{Introduction}
 
@@ -422,7 +604,7 @@ This section presents the main design directions of the proposed application, wh
 \end{itemize}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.98\textwidth]{figures/_first_page/chapter_picture}
+    \includegraphics[width=0.98\textwidth]{figures/_first_page/chapter_picture.jpg}
     \caption{a service-based application}
     \label{fig:a service-based application}
 \end{figure}
@@ -432,14 +614,25 @@ In this chapter, we conducted a \textbf{comprehensive study} of existing applica
 
 In the next chapter, we will proceed to the implementation of the proposed solutions through the \textbf{System Modeling} phase using \textbf{UML diagrams}.
 
+\section*{Logo of the application}
+
+\vfill
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\textwidth,height=0.3\textheight,keepaspectratio]{figures/_first_page/logo.jpg}
+    \caption{Logo of the application}
+    \label{fig:logo}
+\end{figure}
+\textbf{Allo Artisan} is a \textbf{mobile application }developed with the aim of facilitating the connection between clients looking for services and artisans offering their skills in various fields.
+\vfill
+
 \chapter{Application Modeling}
 \section{\textbf{Introduction}}
-\begin{itemize}
-    \item In this chapter, we will study several UML (Unified Modeling Language) models of a system. Some models present the system from the users’ point of view, others illustrate its internal structure, while some provide a global or detailed vision of the system. These models complement each other and can be combined. They are developed throughout the entire system development life cycle, from requirements expression to the design phase,
-\textbf{The application brings together five main actors}: the Visitor, the Client, the Artisan, the Moderator, and the Administrator 
-\end{itemize}  
+    In this chapter, we will study several UML (Unified Modeling Language) models of a system. Some models present the system from the users’ point of view, others illustrate its internal structure, while some provide a global or detailed vision of the system. These models complement each other and can be combined. They are developed throughout the entire system development life cycle, from requirements expression to the design phase,
+\textbf{The application brings together five main actors}: the Visitor, the Client, the Artisan, the Moderator, and the Administrator   
 \section{Requirements expression}
- \subsection{Use Case Diagram}
+ \subsection{Definition of Use Case Diagram}
 
 Use case diagram are usually referred to as behavior diagram used to describe a set of 
 actions (use cases) that some system should or can perform in collaboration with one or 
@@ -451,7 +644,7 @@ and valuable result to the actors or other stakeholders of the system\cite{ref1}
 There are five actors who can use our application:
 
 \begin{enumerate}
-    \item \textbf{Visitor:} an unauthenticated person who can access limited public features of the application.
+    \item \textbf{Visitor:} an unauthenticated person who can access limited public features of the \\ application.
     \item \textbf{Client:} a registered user who can access the full feature of the application.
     \item \textbf{Artisan:} a registered professional who offers services on the platform.
     \item \textbf{Moderator:} a system manager responsible for controlling and supervising the application.
@@ -540,14 +733,14 @@ Precondition & The artisan must have a valid email address. \\
 \hline
 Nominal Scenario &
 \begin{minipage}[t]{10cm}
-\vspace{2pt}
+\vspace{1pt}
     1.The Artisan submits registration details.\\
     2. The Application queries the Database to verify if the email already exists.\\
     1.1. The Database returns that the email is available.\\
     3. The Application saves the artisan data with "Pending" status.\\
     1.1. The Database confirms successful record creation.\\
     1.2. The Application notifies the Artisan that the registration has been submitted and is awaiting confirmation.
-\vspace{2pt}
+\vspace{1pt}
 \end{minipage} \\
 \hline
 Alternative Scenario & \textbf{A1: If the email already exists.} \newline
@@ -570,7 +763,7 @@ The following table (Table:\ref{tab:authentication}) represents the textual desc
 \begin{table}[H]
 \centering
 \renewcommand{\arraystretch}{1.1}
-\begin{tabular}{|>{\bfseries\arraybackslash}m{3cm}|>{\arraybackslash}m{12cm}|}
+\begin{tabular}{|>{\bfseries\arraybackslash}m{4cm}|>{\arraybackslash}m{12cm}|}
 \hline
 \multicolumn{2}{|c|}{\cellcolor[HTML]{1F4E79}\textcolor{white}{\textbf{User Authentication}}} \\
 \hline
@@ -599,7 +792,6 @@ Alternative Scenario & \textbf{A1: Invalid credentials.} \newline
 \caption{Textual Description of the Use Case <<Authentication>>}
 \label{tab:authentication}
 \end{table}
-
 \subsubsection{Use Case :'Schedule an appointment'}
 The following figure (Figure\ref{fig:request service}) represents the sequence diagram of the<<Schedule an appointment>>use case  
 \begin{figure}[H]
@@ -613,7 +805,7 @@ diagram(Figure\ref{fig:request service}):
 \begin{table}[H]
 \centering
 \renewcommand{\arraystretch}{1}
-\begin{tabular}{|>{\bfseries\arraybackslash}m{3cm}|>{\arraybackslash}m{11cm}|}
+\begin{tabular}{|>{\bfseries\arraybackslash}m{4cm}|>{\arraybackslash}m{11cm}|}
 \hline
 \multicolumn{2}{|c|}{\cellcolor[HTML]{1F4E79}\textcolor{white}{\textbf{Schedule an appointment}}} \\
 \hline
@@ -660,19 +852,22 @@ Alternative Scenario &
 \label{tab:Schedule an appointment}
 \end{table}
 
+
+
+
 \subsubsection{Use Case :approve artisan account creation}
 The following figure (figure:\ref{fig:approve artisan account creation}) represents the sequence diagram of the <<Approve artisan account creation>> use case 
-%\begin{figure}[H]
- %   \centering
-  %  \includegraphics[width=0.98\textwidth]{sequance-admin_validation.drawio (1).png.png}
-   % \caption{approve artisan account sequence diagram}
-    %\label{fig:approve artisan account creation}
-%\end{figure}
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=0.98\textwidth]{figures/_first_page/admin_val.jpg}
+    \caption{approve artisan account sequence diagram}
+    \label{fig:approve artisan account creation}
+\end{figure}
 The following table (Table:\ref{tab:validate-artisan}) represents the textual description corresponding to the previous sequence diagram(Figure\ref{fig:approve artisan account creation}):
 \begin{table}[H]
 \centering
 \renewcommand{\arraystretch}{1}
-\begin{tabular}{|>{\bfseries\arraybackslash}m{3cm}|>{\arraybackslash}m{12cm}|}
+\begin{tabular}{|>{\bfseries\arraybackslash}m{4cm}|>{\arraybackslash}m{12cm}|}
 \hline
 \multicolumn{2}{|c|}{\cellcolor[HTML]{1F4E79}\textcolor{white}{\textbf{Approve Artisan Account}}} \\
 \hline
@@ -723,7 +918,6 @@ The activity diagram must represent all the actions performed by the system, inc
     \caption{Activity diagram}
     \label{fig:Activity Diagram}
 \end{figure}
-\subsection{Textual Description of the Activity Diagram}
 In this part, we present the textual description of the previous activity diagram(Figure\ref{fig:Activity Diagram}) :\newline
 The service request process revolves around three main actors: the \textbf{Client}, the \textbf{Application}, and the \textbf{Artisan}. It unfolds as follows:
 
@@ -998,7 +1192,7 @@ PostgreSQL is a powerful, open source object-relational database system, it was 
 \section{Deployment Diagram}
 \subsection{Definition of the Deployment Diagram }
 A deployment diagram describes the physical arrangement of the hardware resources that make up the system and shows the distribution of components across this hardware. Each resource is represented by a node, and the deployment diagram specifies how the components are distributed on the nodes as well as the connections between the components or the nodes. Deployment diagrams exist in two forms: specification and instance.\cite{ref5}
-\subsection{presentation of deployment diagram}
+\subsection{Presentation of Deployment Diagram}
 The following figure \ref{fig:deployment digram} presented the class diagram of the application:
 
 \begin{figure}[H]
@@ -1007,10 +1201,10 @@ The following figure \ref{fig:deployment digram} presented the class diagram of 
     \caption{Deployment Diagram} 
       \label{fig:deployment digram}
 \end{figure} 
-\subsection{textual description of deployment diagram}
+\subsection{Textual Description of Deployment Diagram}
 The diagram is structured around three distinct deployment nodes, each grouping one or more software components that fulfill well-defined roles within the system.
 
-\paragraph{1.1 Client Node — Smartphone Android/iOS}
+\paragraph{1.1 Client Node - Smartphone Android/iOS}
 
 This node represents the execution environment on the end-user side, namely a mobile device running an Android or iOS operating system. It hosts the following component:
 
@@ -1018,7 +1212,7 @@ This node represents the execution environment on the end-user side, namely a mo
     \item \textbf{ «Flutter App»Component:} This is the mobile application developed using the Flutter framework. It constitutes the presentation layer of the system and is responsible for rendering the user interface, handling user interactions, and forwarding requests to the remote backend via the HTTPS/REST API interface.
 \end{itemize}
 
-\paragraph{1.2 Server Node — Mobile App Layer + Backend Server}
+\paragraph{1.2 Server Node - Mobile App Layer + Backend Server}
 
 This node groups all server-side application components. It acts as an intermediary between the client layer and the persistence layer and hosts two distinct components:
 
@@ -1028,7 +1222,7 @@ This node groups all server-side application components. It acts as an intermedi
     \item \textbf{ «Go REST API Server»Component:} This component constitutes the core of the business logic layer. Developed in the Go programming language (Golang), it exposes a RESTful API consumed by the Dart component and is responsible for executing SQL queries against the database management system.
 \end{itemize}
 
-\paragraph{1.3 Persistence Node — Database Server}
+\paragraph{1.3 Persistence Node - Database Server}
 
 This node corresponds to the data persistence layer of the system. It hosts the following component:
 
@@ -1057,17 +1251,9 @@ Go REST API Server & PostgreSQL DB & SQL Queries & Execution of CRUD operations 
 \caption{Communication Flows and Protocols}
 \label{tab:communication}
 \end{table}
-\section{Application Overview}
- In this part, we will present our application: <<\textbf{Allo Artisan}>> 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.4\textwidth]{figures/_first_page/logo.jpg}
-    \caption{logo of the application} 
-      \label{fig:logo}
-\end{figure}
-\textbf{Allo Artisan} is a \textbf{mobile application }developed with the aim of facilitating the connection between clients looking for services and artisans offering their skills in various fields.
 
-\section{Application Interface}
+
+\section{Application Interfaces}
 In this part, we will present the interfaces of our application:
 \subsubsection{Login Interface}
 The adjacent figure (Figure \ref{fig:login})represents the Login interface of our Allo Artisan application:
@@ -1100,7 +1286,7 @@ The figure above(Figure\ref{fig:create-artisan}) presents the artisan account cr
 \begin{figure}[h]
     \centering
     \begin{subfigure}[c]{0.3\textwidth}
-        \includegraphics[width=\textwidth]{figures/_first_page/register_step1.png}
+        \includegraphics[width=\textwidth]{figures/_first_page/register_step1.jpg}
         \caption{Step 1}
     \end{subfigure}
     \hfill
@@ -1225,7 +1411,7 @@ The artisan can consult and manage his complete profile. Displays his name, job 
 \vspace{10pt}
 
 \textbf{Public View (visible to clients):}
-Clients can view the artisan's public profile, which displays their name, category, rating, and email address. Two action buttons are available — "Follow" and "Message" — allowing the client to follow the artisan or contact them directly. It also presents:
+Clients can view the artisan's public profile, which displays their name, category, rating, and email address. Two action buttons are available: "Follow" and "Message" allowing the client to follow the artisan or contact them directly. It also presents:
 
 \vspace{6pt}
 \begin{itemize}[leftmargin=0.5cm, nolistsep]
@@ -1257,9 +1443,10 @@ Clients can view the artisan's public profile, which displays their name, catego
 % ===================== CONCLUSION =====================
 \section{Conclusion}
 This chapter presents the implementation phase of our Allo Artisan application. We described the tools and technologies used during the development process,then illustrated the different interfaces of the application intended for both the client and the artisan. This chapter therefore concludes our project by translating all the previous stages into a concrete and functional mobile application
+
 \chapter*{General Conclusion}
 \thispagestyle{empty}
-\setcounter{page}{0} 
+%\setcounter{page}{0} 
 \addcontentsline{toc}{chapter}{General Conclusion}
 
 This project was carried out with the objective of designing and developing \textbf{Allo Artisan}, a 
@@ -1269,23 +1456,24 @@ progressive methodology that ensured consistency between the identified requirem
 the delivered solution.
 \newline
 We began by analyzing existing platforms in the same domain, which allowed us to identify 
-their key limitations and define a clear problem statement. This study guided us in 
-designing a solution structured around three axes — \textbf{trust, functionality, and usability} —
+their key limitations and define a clear problem statement.
+\newline
+This study guided us in 
+designing a solution structured around three axes: \textbf{trust, functionality, and usability} —
 materialized through features such as QR code-based identity verification, diploma validation, 
 a multi-criteria search system, an availability calendar, and a post and notification mechanism 
 for service requests.
 \newline
 The system was then modeled using a comprehensive set of UML diagrams before being 
-implemented using \textbf{Java for Android}, with \textbf{PostgreSQL} as the database management system. \newline
+implemented using \textbf{Flutter} for the frontend, \textbf{Go (Golang)} for the backend, with \textbf{PostgreSQL} as the database management system. \newline
 The resulting application offers a reliable and accessible experience for clients , artisans, and administrators alike.\newline
 
 As a perspective, future enhancements could include the integration of an \textbf{AI-based 
 recommendation system}, an \textbf{in-app payment module}, and the development of a 
-\textbf{complementary web platform} — improvements that would further strengthen Allo Artisan as 
+\textbf{complementary web platform} improvements that would further strengthen Allo Artisan as 
 a scalable and sustainable solution for the digitalization of artisan services in Algeria.
 \newpage
 \addcontentsline{toc}{chapter}{Bibliography}
-\addcontentsline{toc}{section}{Webography}
 
 \begin{thebibliography}{99}
 
@@ -1304,7 +1492,14 @@ P. Roques,
 5\textsuperscript{e} édition,
 Eyrolles.
 
+\end{thebibliography}
+
 % ===== WEBOGRAPHY (Sites web) =====
+\newpage
+\addcontentsline{toc}{chapter}{Webography}
+
+\begin{thebibliography}{99}
+
 \section*{Webography}
 
 \bibitem{ref1}
@@ -1362,4 +1557,5 @@ PostgreSQL,
 Accessed on May 22, 2026.
 
 \end{thebibliography}
+
 \end{document}
