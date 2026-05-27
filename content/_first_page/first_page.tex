@@ -122,10 +122,8 @@
 \begin{minipage}[t]{0.48\textwidth}
     \textbf{\underline{Domain:}} Mathematics and Computer Science \\[6pt]
     \textbf{\underline{Field:}} Computer Science \\[6pt]
-    \textbf{\underline{Specialty}}: Information Systems
+    \textbf{\underline{Specialty:}} Information Systems
 \end{minipage}
-
-\vspace{1cm}
 
 % ===== TITRE =====
 \begin{center}
@@ -405,17 +403,17 @@ Technically, the application was developed using Flutter for the mobile interfac
 {\arabicfont
 \begin{RTL}
 
+
 \noindent
-يتناول هذا المشروع تصميم وتطوير تطبيق هاتف محمول يُدعى «Allo Artisan»، يهدف إلى تسهيل عملية الربط بين الزبائن والحرفيين في الجزائر.
+يتناول هذا المشروع تصميم وتطوير تطبيق هاتف محمول يُدعى \textenglish{«Allo Artisan»}، يهدف إلى تسهيل عملية الربط بين الزبائن والحرفيين في الجزائر.
 
 بعد دراسة وتحليل التطبيقات الموجودة في نفس المجال والتعرّف على حدودها ونقاط ضعفها، قمنا باقتراح حل يعتمد على ثلاثة محاور أساسية: الثقة، الوظائف، وسهولة الاستخدام.
 
-يوفّر التطبيق مجموعة من الخصائص الأساسية، من بينها: التحقق من هوية الحرفي باستخدام رمز QR، التحقق من الشهادات والوثائق المهنية، نظام بحث متعدد المعايير، تقويم لتحديد فترات التوفر، بالإضافة إلى نظام للمنشورات والإشعارات الخاصة بطلبات الخدمات العادية والمستعجلة.
+يوفّر التطبيق مجموعة من الخصائص الأساسية، من بينها: التحقق من هوية الحرفي باستخدام \textenglish{QR}، التحقق من الشهادات والوثائق المهنية، نظام بحث متعدد المعايير، تقويم لتحديد فترات التوفر، بالإضافة إلى نظام للمنشورات والإشعارات الخاصة بطلبات الخدمات العادية والمستعجلة.
 
-من الناحية التقنية، تم تطوير التطبيق باستخدام Flutter لتطوير واجهة الهاتف المحمول، وGo (Golang) لتطوير الجزء الخلفي وإنشاء واجهة API REST، إضافةً إلى PostgreSQL كنظام لإدارة قواعد البيانات، مع استخدام Docker لضمان نشر مستقر وقابل للنقل.
+من الناحية التقنية، تم تطوير التطبيق باستخدام \textenglish{Flutter} لتطوير واجهة الهاتف المحمول، و\textenglish{Go (Golang)} لتطوير الجزء الخلفي وإنشاء واجهة \textenglish{API REST}، إضافةً إلى \textenglish{PostgreSQL} كنظام لإدارة قواعد البيانات، مع استخدام \textenglish{Docker} لضمان نشر مستقر وقابل للنقل.
 
 \vspace{0.3cm}
-
 \textbf{الكلمات المفتاحية:} تطبيق هاتف محمول، الربط بين الزبائن والحرفيين، Flutter، Go، PostgreSQL.
 
 \end{RTL}
@@ -605,7 +603,7 @@ This section presents the main design directions of the proposed application, wh
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.98\textwidth]{figures/_first_page/chapter_picture.jpg}
-    \caption{a service-based application}
+    \caption{A Service-Based Application}
     \label{fig:a service-based application}
 \end{figure}
 \section{Conclusion}
@@ -614,18 +612,7 @@ In this chapter, we conducted a \textbf{comprehensive study} of existing applica
 
 In the next chapter, we will proceed to the implementation of the proposed solutions through the \textbf{System Modeling} phase using \textbf{UML diagrams}.
 
-\section*{Logo of the application}
 
-\vfill
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.45\textwidth,height=0.3\textheight,keepaspectratio]{figures/_first_page/logo.jpg}
-    \caption{Logo of the application}
-    \label{fig:logo}
-\end{figure}
-\textbf{Allo Artisan} is a \textbf{mobile application }developed with the aim of facilitating the connection between clients looking for services and artisans offering their skills in various fields.
-\vfill
 
 \chapter{Application Modeling}
 \section{\textbf{Introduction}}
@@ -856,14 +843,14 @@ Alternative Scenario &
 
 
 \subsubsection{Use Case :approve artisan account creation}
-The following figure (figure:\ref{fig:approve artisan account creation}) represents the sequence diagram of the <<Approve artisan account creation>> use case 
+The following figure (figure:\ref{fig:Approve Artisan Account Creation}) represents the sequence diagram of the <<Approve artisan account creation>> use case 
 \begin{figure}[H]
   \centering
     \includegraphics[width=0.98\textwidth]{figures/_first_page/admin_val.jpg}
     \caption{approve artisan account sequence diagram}
-    \label{fig:approve artisan account creation}
+    \label{fig:Approve Artisan Account Creation}
 \end{figure}
-The following table (Table:\ref{tab:validate-artisan}) represents the textual description corresponding to the previous sequence diagram(Figure\ref{fig:approve artisan account creation}):
+The following table (Table:\ref{tab:validate-artisan}) represents the textual description corresponding to the previous sequence diagram(Figure\ref{fig:Approve Artisan Account Creation}):
 \begin{table}[H]
 \centering
 \renewcommand{\arraystretch}{1}
@@ -910,8 +897,8 @@ Alternative Scenario & \textbf{A1: Error during approval (e.g., connection issue
 
 \subsection{Definition of the Activity diagram}
 The activity diagram must represent all the actions performed by the system, including all conditional branches and possible loops. It is a directed graph of actions and transitions. Transitions are crossed when actions are completed; activities can be performed either in parallel or sequentially\cite{ref2}
- \subsection{Presentation of the Activity Diagram}
- The following figure (Figure\ref{fig:Activity Diagram}) represents the Activity Diagram of the System : 
+ \subsection{Appointment Management Activity Diagram}
+ The following figure (Figure\ref{fig:Activity Diagram}) Appointment Management Activity Diagram: 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.98\textwidth]{figures/_first_page/activity.drawio.png}
@@ -1201,9 +1188,9 @@ The following figure \ref{fig:deployment digram} presented the class diagram of 
     \caption{Deployment Diagram} 
       \label{fig:deployment digram}
 \end{figure} 
-\subsection{Textual Description of Deployment Diagram}
-The diagram is structured around three distinct deployment nodes, each grouping one or more software components that fulfill well-defined roles within the system.
+\textbf{Textual Description of Deployment Diagram}
 
+The diagram is structured around three distinct deployment nodes, each grouping one or more software components that fulfill well-defined roles within the system.
 \paragraph{1.1 Client Node - Smartphone Android/iOS}
 
 This node represents the execution environment on the end-user side, namely a mobile device running an Android or iOS operating system. It hosts the following component:
@@ -1253,232 +1240,357 @@ Go REST API Server & PostgreSQL DB & SQL Queries & Execution of CRUD operations 
 \end{table}
 
 
+% =========================================================
+% APPLICATION LOGO
+% =========================================================
+% =========================================================
+% APPLICATION OVERVIEW
+% =========================================================
+
+\section{Application Logo}
+
+% =========================================================
+% APPLICATION LOGO
+% =========================================================
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[
+        width=0.45\textwidth,
+        height=0.32\textheight,
+        keepaspectratio
+    ]{figures/_first_page/logo.jpg}
+    \caption{Logo of the Application}
+    \label{fig:logo}
+\end{figure}
+
+\textbf{Allo Artisan} is a mobile application designed to facilitate the connection between clients searching for services and artisans offering professional skills in different fields.
+
+\vspace{0.5cm}
+
+% =========================================================
+% APPLICATION INTERFACES
+% =========================================================
+
 \section{Application Interfaces}
-In this part, we will present the interfaces of our application:
+
+
+
+In this section, we present the main interfaces of the \textbf{Allo Artisan} application.
+
+% =========================================================
+% LOGIN
+% =========================================================
+
 \subsubsection{Login Interface}
-The adjacent figure (Figure \ref{fig:login})represents the Login interface of our Allo Artisan application:
-\begin{minipage}[c]{0.55\textwidth}
-This interface is the \textbf{first page displayed} to the user when launching the application. It offers \textbf{two login modes} through a "Client" and "Artisan" selector, allowing each type of user to authenticate according to their role. The user must enter their \textbf{email address or username}, as well as their \textbf{password}, to access their account. A \textbf{"Login"} button is provided to validate the authentication process. The application also offers the possibility to \textbf{"Continue as a Visitor"} in order to \textbf{access certain features without an account}. For new users, two links are available at the bottom of the page: \textbf{"Client Registration"} and \textbf{"Artisan Registration"}, each redirecting to the corresponding registration form.
+
+\begin{minipage}[c]{0.58\textwidth}
+
+The interface shown in Figure \ref{fig:login} represents the login screen of the application.
+
+It is the first interface displayed when launching the application. Users can choose between two authentication modes: \textbf{Client} or \textbf{Artisan}. The user enters an email address or username together with a password to access the account.
+
+The interface also allows users to continue in \textbf{Visitor Mode} without authentication. Two additional options redirect new users to either the client registration form or the artisan registration form.
+
 \end{minipage}
 \hfill
-\begin{minipage}[c]{0.38\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{figures/_first_page/login_screen.png}
-    \captionof{figure}{Login Interface}
-    \label{fig:login}
+\begin{minipage}[c]{0.32\textwidth}
+\centering
+\fbox{
+\includegraphics[width=0.9\linewidth,height=8cm,keepaspectratio]{figures/_first_page/login_screen.png}
+}
+\captionof{figure}{Login Interface}
+\label{fig:login}
 \end{minipage}
 
-\vspace{15pt}
-% ===== 3.4.2 Create Artisan Account Interface =====
+\vspace{0.5cm}
+
+% =========================================================
+% CREATE ARTISAN ACCOUNT
+% =========================================================
+
 \subsubsection{Create Artisan Account Interface}
-The figure above(Figure\ref{fig:create-artisan}) presents the artisan account creation interface in our Allo Artisan application :
-\begin{itemize}
-    \item \textbf{Step 1} – Personal Information:
-        The artisan must add a profile picture and fill in their personal information, including their first name, last name, professional category, wilaya, baladeya,municipality and intervention area. A “Next” button allows them to proceed to the next step.
-    \item \textbf{Step 2} – Documents:
-        The artisan must upload two required documents: an official document such as an identity card or criminal record extract, as well as a diploma or professional certification.A “Next” button allows them to continue.
-    \item \textbf{Step 3} – Account:
-        The artisan must enter their email address, phone number, password, and confirm the password. A “Sign Up” button completes the account creation process.
+
+Figure \ref{fig:artisan_account} illustrates the artisan account creation process, divided into three steps:
+
+\begin{itemize}[leftmargin=0.6cm]
+\item \textbf{Step 1 -- Personal Information:} profile image, personal information, category, wilaya, municipality, and intervention area.
+\item \textbf{Step 2 -- Documents:} upload of identity documents and diploma or professional certificate.
+\item \textbf{Step 3 -- Account Information:} email address, phone number, and password confirmation.
 \end{itemize}
 
-\vspace{10pt}
+\begin{figure}[H]
+\centering
 
-\begin{figure}[h]
-    \centering
-    \begin{subfigure}[c]{0.3\textwidth}
-        \includegraphics[width=\textwidth]{figures/_first_page/register_step1.jpg}
-        \caption{Step 1}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[c]{0.3\textwidth}
-        \includegraphics[width=\textwidth]{figures/_first_page/register_step2.png}
-        \caption{Step 2}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[c]{0.3\textwidth}
-        \includegraphics[width=\textwidth]{figures/_first_page/register_step3.png}
-        \caption{Step 3}
-    \end{subfigure}
-    \caption{Create Artisan Account Interface}
-    \label{fig:artisan_account}
+\fbox{
+\begin{minipage}{0.95\textwidth}
+\centering
+
+\begin{subfigure}[c]{0.30\textwidth}
+\centering
+\includegraphics[width=\linewidth,height=7cm,keepaspectratio]{figures/_first_page/register_step1.jpg}
+\caption{Step 1}
+\end{subfigure}
+\hfill
+\begin{subfigure}[c]{0.30\textwidth}
+\centering
+\includegraphics[width=\linewidth,height=7cm,keepaspectratio]{figures/_first_page/register_step2.png}
+\caption{Step 2}
+\end{subfigure}
+\hfill
+\begin{subfigure}[c]{0.30\textwidth}
+\centering
+\includegraphics[width=\linewidth,height=7cm,keepaspectratio]{figures/_first_page/register_step3.png}
+\caption{Step 3}
+\end{subfigure}
+
+\end{minipage}
+}
+
+\caption{Create Artisan Account Interface}
+\label{fig:artisan_account}
+
 \end{figure}
+
+% =========================================================
+% HOME PAGE
+% =========================================================
+
 \subsubsection{Client Home Page Interface}
 
-\begin{minipage}[c]{0.55\textwidth}
-The figure adjacent (Figure\ref{fig:home}) represents the client home interface of the Allo Artisan application. It displays the recent publications of artisans, where each publication includes:
-The artisan’s profile picture, name, and professional category
-The artisan’s rating
-An image illustrating the completed work
-A description of the service provided
-Interactions in the form of likes, comments, and shares
+\begin{minipage}[c]{0.58\textwidth}
 
-A “+ Share a Request” button allows the client to publish a new service request. At the top of the page, a search bar enables the client to quickly find an artisan, accompanied by a QR code scan button that allows the client to directly scan an artisan’s QR code and access their profile instantly.
+Figure \ref{fig:home} presents the client home page interface.
+
+The page displays artisan publications containing profile information, ratings, images of completed work, and user interactions such as comments and likes.
+
+The interface also includes:
+
+\begin{itemize}[leftmargin=0.6cm]
+\item A \textbf{"+ Share a Request"} button
+\item A search bar
+\item A QR code scanner for direct profile access
+\end{itemize}
+
 \end{minipage}
 \hfill
-\begin{minipage}[c]{0.38\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{figures/_first_page/home_screen_client.png}
-    \captionof{figure}{Home Page Interface}
-    \label{fig:home}
+\begin{minipage}[c]{0.32\textwidth}
+\centering
+\fbox{
+\includegraphics[width=0.9\linewidth,height=8cm,keepaspectratio]{figures/_first_page/home_screen_client.png}
+}
+\captionof{figure}{Client Home Interface}
+\label{fig:home}
 \end{minipage}
+
+\vspace{0.5cm}
+
+% =========================================================
+% REQUEST INTERFACE
+% =========================================================
+
 \subsubsection{Client Share a Request Interface}
-The figure(Figure \ref{fig:request})represents the service request sharing interface of the \textbf{Allo Artisan} application. This interface appears as a popup when the client clicks on the \textbf{"+ Share a Request"} button. It offers two types of requests:
 
-\vspace{10pt}
+Figure \ref{fig:request} represents the request publication popup.
 
-\textbf{Normal Request:} When the client selects the "Normal" mode, a blue message informs them that "Your request will be visible in the artisans' feed." The client must then fill in the service category, their area, and a detailed description of the request.
+The interface supports two request types:
 
-\vspace{10pt}
+\begin{itemize}[leftmargin=0.6cm]
+\item \textbf{Normal Request:} visible in artisans' feeds.
+\item \textbf{Urgent Request:} immediately sent as notifications to active artisans.
+\end{itemize}
 
-\textbf{Urgent Request:} When the client selects the "Urgent" mode, a red warning message indicates that "Active artisans will be notified immediately," ensuring a quick response. The client provides the same information as for a normal request.
-
-\vspace{10pt}
-
-In both cases, a \textbf{"Send"} button allows the client to submit the request, while a \textbf{"Cancel"} button closes the popup without saving.
-
-\vspace{15pt}
+In both cases, the client specifies the category, location, and request description.
 
 \begin{figure}[H]
-    \centering
-    \begin{minipage}[c]{0.45\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{figures/_first_page/demand_normal.png}
-        \caption{Normal Request}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[c]{0.45\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{figures/_first_page/demand_urgent.png}
-        \caption{Urgent Request}
-    \end{minipage}
-    \caption{Service Request Sharing Interface}
-    \label{fig:request}
+\centering
+
+\fbox{
+\begin{minipage}{0.95\textwidth}
+\centering
+
+\begin{subfigure}[c]{0.42\textwidth}
+\centering
+\includegraphics[width=\linewidth,height=7cm,keepaspectratio]{figures/_first_page/demand_normal.png}
+\caption{Normal Request}
+\end{subfigure}
+\hfill
+\begin{subfigure}[c]{0.42\textwidth}
+\centering
+\includegraphics[width=\linewidth,height=7cm,keepaspectratio]{figures/_first_page/demand_urgent.png}
+\caption{Urgent Request}
+\end{subfigure}
+
+\end{minipage}
+}
+
+\caption{Service Request Interface}
+\label{fig:request}
+
 \end{figure}
-\subsubsection{Search for an Artisan Interface} 
-\begin{minipage}[c]{0.55\textwidth}
-    The illustrated interface(Figure\ref{fig:Search}) is a search screen of the Allo Artisan application. It offers three filters: the selection of the service category (here, plumbing), the maximum search distance using a slider, and the desired minimum rating. A “Reset” button allows the user to clear all filters with a single click
+
+% =========================================================
+% SEARCH
+% =========================================================
+
+\subsubsection{Search for an Artisan Interface}
+
+\begin{minipage}[c]{0.58\textwidth}
+
+The interface shown in Figure \ref{fig:search} represents the artisan search page.
+
+Users can filter artisans according to:
+
+\begin{itemize}[leftmargin=0.6cm]
+\item Service category
+\item Search distance
+\item Minimum rating
+\end{itemize}
+
+A \textbf{Reset} button clears all filters.
+
 \end{minipage}
 \hfill
-\begin{minipage}[c]{0.38\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{figures/_first_page/search.png}
-    \captionof{figure}{Search for an artisan Interface}
-    \label{fig:Search}
+\begin{minipage}[c]{0.32\textwidth}
+\centering
+\fbox{
+\includegraphics[width=0.9\linewidth,height=8cm,keepaspectratio]{figures/_first_page/search.png}
+}
+\captionof{figure}{Search Interface}
+\label{fig:search}
 \end{minipage}
+
+\vspace{0.5cm}
+
+% =========================================================
+% PROFILE INTERFACE
+% =========================================================
 
 \subsubsection{Profile Artisan Interface}
-The figure above represents the profile interface of the Allo Artisan application on the artisan side, available in two views :
 
-\vspace{8pt}
-\textbf{Private View (accessible by the artisan) :}
-The artisan can consult and manage his complete profile. Displays his name, job category, rating, and email address. It also offers:
+The artisan profile interface is available in two different views.
 
-\vspace{6pt}
-\begin{itemize}[leftmargin=0.5cm, nolistsep]
-    \item A "QR Code" button to generate his personal QR code
-    \item A "Settings" button to modify his information
-    \item A visibility status that can be toggled to appear or not to clients
-    \item Management of his availabilities via a calendar
-    \item The list of his subscribers
-    \item A "Create a publication" section to share his work with a photo
-\end{itemize}
+\vspace{0.2cm}
 
-\vspace{10pt}
+\textbf{Private View:}
+
+The artisan can manage profile information, visibility, publications, followers, QR code generation, and calendar availability.
 
 \begin{figure}[H]
-    \centering
-    \begin{subfigure}[c]{0.3\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{figures/_first_page/privayte_profile.png}
-        \caption{Profile 1}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[c]{0.3\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{figures/_first_page/privat_profile2.png}
-        \caption{Profile 2}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[c]{0.3\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{figures/_first_page/private_profile3.png}
-        \caption{Profile 3}
-    \end{subfigure}
-    \caption{Artisan Private Profile Interface}
-    \label{fig:artisan_private_profile}
+\centering
+
+\fbox{
+\begin{minipage}{0.95\textwidth}
+\centering
+
+\begin{subfigure}[c]{0.30\textwidth}
+\centering
+\includegraphics[width=\linewidth,height=7cm,keepaspectratio]{figures/_first_page/privayte_profile.png}
+\caption{Profile 1}
+\end{subfigure}
+\hfill
+\begin{subfigure}[c]{0.30\textwidth}
+\centering
+\includegraphics[width=\linewidth,height=7cm,keepaspectratio]{figures/_first_page/privat_profile2.png}
+\caption{Profile 2}
+\end{subfigure}
+\hfill
+\begin{subfigure}[c]{0.30\textwidth}
+\centering
+\includegraphics[width=\linewidth,height=7cm,keepaspectratio]{figures/_first_page/private_profile3.png}
+\caption{Profile 3}
+\end{subfigure}
+
+\end{minipage}
+}
+
+\caption{Artisan Private Profile Interface}
+\label{fig:artisan_private_profile}
+
 \end{figure}
 
-\vspace{10pt}
+\vspace{0.3cm}
 
-\textbf{Public View (visible to clients):}
-Clients can view the artisan's public profile, which displays their name, category, rating, and email address. Two action buttons are available: "Follow" and "Message" allowing the client to follow the artisan or contact them directly. It also presents:
+\textbf{Public View:}
 
-\vspace{6pt}
-\begin{itemize}[leftmargin=0.5cm, nolistsep]
-    \item Their personal QR code
-    \item Their visibility status
-    \item Their availability, including working days and hours
-    \item The list of their followers
-    \item Their published work posts that showcase completed services
-\end{itemize}
-
-\vspace{10pt}
+Clients can consult artisan information, availability, followers, QR code, and publications. They can also follow or contact the artisan directly.
 
 \begin{figure}[H]
-    \centering
-    \begin{subfigure}[c]{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{figures/_first_page/artisan_public_profile.png}
-        \caption{Public profile 1}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[c]{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{figures/_first_page/artisan_public_profil2.png}
-        \caption{Public profile 2}
-    \end{subfigure}
-    \caption{Artisan Public Profile Interface}
-    \label{fig:artisan_public_profile}
+\centering
+
+\fbox{
+\begin{minipage}{0.95\textwidth}
+\centering
+
+\begin{subfigure}[c]{0.42\textwidth}
+\centering
+\includegraphics[width=\linewidth,height=7cm,keepaspectratio]{figures/_first_page/artisan_public_profile.png}
+\caption{Public Profile 1}
+\end{subfigure}
+\hfill
+\begin{subfigure}[c]{0.42\textwidth}
+\centering
+\includegraphics[width=\linewidth,height=7cm,keepaspectratio]{figures/_first_page/artisan_public_profil2.png}
+\caption{Public Profile 2}
+\end{subfigure}
+
+\end{minipage}
+}
+
+\caption{Artisan Public Profile Interface}
+\label{fig:artisan_public_profile}
+
 \end{figure}
-% ===================== CONCLUSION =====================
+% =========================================================
+% CONCLUSION
+% =========================================================
+
 \section{Conclusion}
-This chapter presents the implementation phase of our Allo Artisan application. We described the tools and technologies used during the development process,then illustrated the different interfaces of the application intended for both the client and the artisan. This chapter therefore concludes our project by translating all the previous stages into a concrete and functional mobile application
 
+This chapter presented the implementation phase of the \textbf{Allo Artisan} application. We introduced the development tools and technologies used, then illustrated the main interfaces designed for both clients and artisans. These interfaces demonstrate the practical realization of the system proposed throughout this project.
+
+% =========================================================
+% GENERAL CONCLUSION
+% =========================================================
+
+\clearpage
 \chapter*{General Conclusion}
-\thispagestyle{empty}
-%\setcounter{page}{0} 
 \addcontentsline{toc}{chapter}{General Conclusion}
+\thispagestyle{empty}
 
-This project was carried out with the objective of designing and developing \textbf{Allo Artisan}, a 
-mobile application dedicated to facilitating the connection between clients and artisans in 
-Algeria. Throughout the different phases of this work, we followed a structured and 
-progressive methodology that ensured consistency between the identified requirements and 
-the delivered solution.
-\newline
-We began by analyzing existing platforms in the same domain, which allowed us to identify 
-their key limitations and define a clear problem statement.
-\newline
-This study guided us in 
-designing a solution structured around three axes: \textbf{trust, functionality, and usability} —
-materialized through features such as QR code-based identity verification, diploma validation, 
-a multi-criteria search system, an availability calendar, and a post and notification mechanism 
-for service requests.
-\newline
-The system was then modeled using a comprehensive set of UML diagrams before being 
-implemented using \textbf{Flutter} for the frontend, \textbf{Go (Golang)} for the backend, with \textbf{PostgreSQL} as the database management system. \newline
-The resulting application offers a reliable and accessible experience for clients , artisans, and administrators alike.\newline
+This project was carried out with the objective of designing and developing \textbf{Allo Artisan}, a mobile application dedicated to facilitating the connection between clients and artisans in Algeria. Throughout the different phases of this work, we followed a structured and progressive methodology that ensured consistency between the identified requirements and the delivered solution.
 
-As a perspective, future enhancements could include the integration of an \textbf{AI-based 
-recommendation system}, an \textbf{in-app payment module}, and the development of a 
-\textbf{complementary web platform} improvements that would further strengthen Allo Artisan as 
-a scalable and sustainable solution for the digitalization of artisan services in Algeria.
-\newpage
+\vspace{0.3cm}
+
+We began by analyzing existing platforms in the same domain, which allowed us to identify their key limitations and define a clear problem statement.
+
+\vspace{0.3cm}
+
+This study guided us in designing a solution structured around three axes: \textbf{trust, functionality, and usability}, materialized through features such as QR code-based identity verification, diploma validation, a multi-criteria search system, an availability calendar, and a post and notification mechanism for service requests.
+
+\vspace{0.3cm}
+
+The system was then modeled using a comprehensive set of UML diagrams before being implemented using \textbf{Flutter} for the frontend, \textbf{Go (Golang)} for the backend, with \textbf{PostgreSQL} as the database management system.
+
+\vspace{0.3cm}
+
+The resulting application offers a reliable and accessible experience for clients, artisans, and administrators alike.
+
+\vspace{0.3cm}
+
+As a perspective, future enhancements could include the integration of an \textbf{AI-based recommendation system}, an \textbf{in-app payment module}, and the development of a \textbf{complementary web platform}, further strengthening Allo Artisan as a scalable solution for the digitalization of artisan services in Algeria.
+
+% =========================================================
+% BIBLIOGRAPHY
+% =========================================================
+
+\clearpage
+\chapter*{Bibliography}
 \addcontentsline{toc}{chapter}{Bibliography}
+\thispagestyle{empty}
 
 \begin{thebibliography}{99}
-
-% ===== BIBLIOGRAPHY (Livres) =====
-\section*{Bibliography}
 
 \bibitem{ref3}
 B. Charroux, A. Osmani, Y. Thierry-Mieg,
@@ -1494,13 +1606,16 @@ Eyrolles.
 
 \end{thebibliography}
 
-% ===== WEBOGRAPHY (Sites web) =====
-\newpage
+% =========================================================
+% WEBOGRAPHY
+% =========================================================
+
+\clearpage
+\chapter*{Webography}
 \addcontentsline{toc}{chapter}{Webography}
+\thispagestyle{empty}
 
 \begin{thebibliography}{99}
-
-\section*{Webography}
 
 \bibitem{ref1}
 uml-diagrams.org,
@@ -1557,5 +1672,3 @@ PostgreSQL,
 Accessed on May 22, 2026.
 
 \end{thebibliography}
-
-\end{document}
